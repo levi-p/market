@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<div style="width:100%;height:auto;borderr:2px solid red;overflow:auto;background-color:#eaeaea">
+    <div style="width:30%;height:auto;float:left;borrder:2px solid green;">
+        <div style="width:90%;height:auto;border:2px solid gray;padding:10px;margin:auto;border-radius:5px">
+        <a><img src="{{profile.profile_pic.url}}" alt='img' style="display:block;width:90%;height:auto;border:2px solid gray;margin:auto;border-radius:5px" ></a>
+        <div style="background-color:pink;width:30%;height:auto;margin:auto;border-radius:5px"><p style="text-align:center">change photo</p></div>
+        </div>
+    </div>
+
+   <div style='width:70%;height:auto;border:2px solid gray;float:right'>
+   
+   <h3>Username : {{profile.first_name}}</h3>
+   <h3>Email &nbsp &nbsp &nbsp &nbsp: {{profile.email}}</h3>
+   <h3>Location &nbsp&nbsp : {{profile.location}}</h3>
+   
+   
+   
+   </div>
+
+
+
+
+
+</div>
+{% endblock %}

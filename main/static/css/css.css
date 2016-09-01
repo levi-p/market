@@ -1,0 +1,78 @@
+#content { padding-bottom: 3em; }
+html, body, #container { height: 100%; }
+body > #container { height: auto; min-height: 100%; }
+
+ * {
+    box-sizing: border-box;
+}
+
+.containbody{width:65%;height:auto;margin:auto;}
+.secondnav{width:100%;height:auto;margin:auto;border-radius:5px;background-color:#191930;#c9c9c9;margin-bottom:10px;color:;padding:px}
+
+.recoproduct{width:30%;height:auto;margin:auto;border-radius:5px;background-color:;margin-bottom:10px;color:white;border:2px solid gray;float:left;margin-left:20px;padding:10px}
+
+.duct{background-color:red;border-radius:5px;float:left;heifght:30px;display:inline}
+
+.second2{display:none}
+
+li {
+    display:inline;
+    
+    
+    color: white;
+    
+    text-decoration: none;
+}
+
+.allproducts{width:20%;height:auto;margin:auto;border-radius:5px;background-color:;margin-bottom:30px;color:white;border:2px solid gray;float:left;margin-left:10%;padding:10px;color:red;text-align:center}
+
+.recoimg{width:100%;border-bottom:2px solid gray;border-radius:5px;}
+
+#logo {
+width:20%;
+height:auto;}
+
+.one {
+    height: 5%;
+    background-color: #191930;
+    background: linear-gradient(to right,#191940,#191930 );
+    margin-bottom: 2px;
+    box-sshadow: 0 5px 5px ;
+    border-radius: 5px;
+   
+    
+    width:100%;
+}
+
+#dd2{padding:5px;border-radieus:5px;margin-right:10px;border-right:none;2px solid orange;display:block;float:right;border:none;font-weight: bold;}
+
+#dd{padding:5px;border-radieus:5px;margin-right:10px;border-right:2px solid orange;font-weight: bold;}
+
+#affmg {display:none}
+
+
+/* mobile site */
+
+@media screen and (max-width:725px){
+.secondnav{width:100%;height:auto;margin:auto;border-radius:5px;background-color:#191930;#c9c9c9;margin-bottom:10px;color:;padding:px;ovnerflow:hidden}
+
+.allproducts{width:100%;height:auto;margin:auto;border-radius:5px;background-color:;margin-bottom:30px;color:white;border:2px solid gray;float:left;margin-leeft:10%;padding:10px;color:red;text-align:center}
+
+.recoproduct{width:100%;height:auto;margin:auto;border-radius:5px;background-color:;margin-bottom:10px;color:white;border:2px solid gray;float:left;margin-lefft:5px;padding:10px;float:left;clear:both;}
+
+#affmg {display:block;positsion:relative;tdop:-20px;margifn:auto}
+#affmg2 {display:none}
+#dd{padding:5px;border-radieus:5px;margin-right:10px;border-right:none;2px solid orange;display:block;font-weight: bold;}
+#dd2{padding:5px;border-radieus:5px;margin-right:10px;border-right:none;2px solid orange;display:block;float:left;border:none;font-weight: bold;}
+
+#logo {
+width:60%;
+height:auto;}
+.second2{display:block}
+
+#kk{display:none}
+.containbody{width:100%;height:auto;margin:auto;}
+
+.recoimg{width:100%;border-bottom:2px solid gray;border-radius:5px;}
+
+}
