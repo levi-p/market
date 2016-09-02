@@ -83,7 +83,7 @@
 
 
 
-    <span id="dd2" class="duct" style=""><a href="{% url "logout" %}"><li style="color:white;font-size:14px;margin-left:0px">{{request.user|capfirst}} Upload a product!</li></a></span>
+    <span id="dd2" class="duct" style=""><a href="{% url "main:ProductUpload" %}"><li style="color:white;font-size:14px;margin-left:0px">{{request.user|capfirst}} Upload a product!</li></a></span>
    {% else %}
    <span id="dd2" class="duct" style=""><li style="color:red;margin-left:0px;display:inline"><a style="color:white;margin-left:1px" href="{% url "Sign_up:Sign_up" %}">sign up to upload a product!</a></li></span>
    {% endif %}
@@ -113,7 +113,7 @@
 
 <div style="position:relative;top:-35px;">
 {% if user.is_authenticated %}
-    <span id="dd2" class="duct" style=""><a href="{% url "logout" %}"><li  style="color:white;font-size:14px;">{{request.user|capfirst}} Upload a product!</li></a></span>
+    <span id="dd2" class="duct" style=""><a href="{% url "main:ProductUpload" %}"><li  style="color:white;font-size:14px;">{{request.user|capfirst}} Upload a product!</li></a></span>
    {% else %}
    <span id="dd2" class="duct" style="color:"><li><a style="color:white" href="{% url "Sign_up:Sign_up" %}">sign up to upload a product!</a></li></span>
    {% endif %}

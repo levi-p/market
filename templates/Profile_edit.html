@@ -1,14 +1,26 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<div class="login mobile">
 
 
 <form action='.' method='post' enctype='multipart/form-data'>
+
 {% csrf_token %}
 
-{{form.as_p}}
+{{get_prof_by_user_id}}k
+{{error}}</br>
+
+{{form.location.label_tag}}</br>
+{{form.location}}</br>
+
+
+{{form.Phone_number.label_tag}}</br>
+{{form.Phone_number}}</br>
 <input type='submit' value='save' />
 
 {{first_name}}
-{% endblock %}
 </form>
+</div>
+{% endblock %}
+

@@ -10,6 +10,7 @@ class dop(admin.ModelAdmin):
         if not change:
             obj.first_name=request.user
             obj.email=request.user.email
+            obj.user_id=request.user.id
          
         obj.save()
         

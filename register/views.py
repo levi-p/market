@@ -48,16 +48,28 @@ def profile(request):
 
 def Profile_edit(request):
     form=Profile_form(request.POST,request.FILES)
+    my=request.user.id
+    try:
+        get_prof_by_user_id=userprofile.objects.get(user_id=my)
     
-    if form.is_valid():
+    
+        if form.is_valid():
         
-        location=form.cleaned_data['location']
+            location=form.cleaned_data['location']
         #profile_pic=form.cleaned_data['profile_pic']
-        Phone_number=form.cleaned_data['Phone_number']
-        
-        P_obj=userprofile(first_name=request.user,email=request.user.email,location=location,Phone_number=Phone_number)
+            Phone_number=form.cleaned_data['Phone_number']
+
+            try :
+                obj=userprofile.objects.filter(user_id=my).update(first_name=request.user,email=request.user.email,location=location,Phone_number=Phone_number)
+                return redirect('/')
+            except:
+                error='Please enter a valid phone number'
+
+    except:
+        P_obj=userprofile(first_name=request.user,email=request.user.email,location='location',user_id=request.user.id)
         P_obj.save()
-        return redirect('/') 
+            
+         
 
         
     return render(request,'Profile_edit.html',locals())

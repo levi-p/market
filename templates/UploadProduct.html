@@ -6,7 +6,37 @@
 
 <form enctype="multipart/form-data" method="post" action='.' >
 {% csrf_token %}
-{{form}}
+
+
+{{form.Product_name.label_tag}}</br>
+{{form.Product_name}}</br>
+
+
+{{form.Discription.label_tag}}</br>
+{{form.Discription}}</br>
+
+
+{{form.Price.label_tag}}</br>
+{{form.Price}}</br>
+
+
+{{form.category_name.label_tag}}</br>
+{{form.category_name}}</br>
+
+
+{{form.pic1.label_tag}}</br>
+{{form.pic1}}</br>
+
+
+{{form.pic2.label_tag}}</br>
+{{form.pic2}}</br>
+
+{{form.pic3.label_tag}}</br>
+{{form.pic3}}</br>
+
+
+
+
 <input type="submit" value="upload" />
 </form>
 

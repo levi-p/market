@@ -3,7 +3,7 @@ from main.models import Product,Category
 
 def home(request):
     #ds=request.user.email
-    cat=Category.objects.all()
+    caet=Category.objects.all()
     reco=Product.objects.filter(recommended='yes')
     return render(request,'base.html',locals())
 

@@ -2,9 +2,11 @@
 {% block content %}
 
 <div class="login mobile">
-<div style="width:40%;margin:auto;height:auto;color:black;backgdround-color:blue">
+<div style="" class="form-plug">Sign Up</div>
 <form method="post" action='.'>
 {% csrf_token %}
+<p>
+<div style="width:55%;margin:auto;height:auto;color:;bofrder:2px solid red">
 
 
 
@@ -15,12 +17,14 @@
 <span style="color:;white">{{form.password.label_tag}}</br><span>
 <span style="color:black">{{form.password}}</br> <span>
 
-<span style="color:;white">{{form.enter_password.label_tag}}</br><span>
+<span style="color:;white">{{form.enter_password.label_tag}} (again)</br><span>
 <span style="color:black">{{form.enter_password}}</br><span>
 
 <input type="submit" value="sign_up" style="background-color:orange;border-radius:5px;color:white" />
 </form>
+</p>
 </div>
+
 
 </div>
 {% endblock %}

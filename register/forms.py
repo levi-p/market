@@ -21,4 +21,4 @@ class Profile_form(forms.ModelForm):
 
 
         model=userprofile
-        exclude=('first_name','email','profile_pic')
+        exclude=('first_name','email','profile_pic','user_id')

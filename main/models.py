@@ -3,6 +3,7 @@ from __future__ import unicode_literals
 from django.db import models
 from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
+from django.utils import timezone
 
 # Create your models here.
 
@@ -26,6 +27,7 @@ class Product(models.Model):
     pic2=models.ImageField(blank=True)
     pic3=models.ImageField(blank=True)
     recommended=models.CharField(max_length=30, default='',blank=True)
+    time=models.DateField(default=timezone.now)
     
 
 

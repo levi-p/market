@@ -6,6 +6,10 @@ body > #container { height: auto; min-height: 100%; }
     box-sizing: border-box;
 }
 
+.Product_img{width:30%;height:auto;float:left;borrder:2px solid green;}
+
+.productdiv{width:70%;height:auto;border:2px solid gray;float:right;background-color:white;font-weight:bold;border-radius:5px;overflow:;padding:10px}
+
 .containbody{width:65%;height:auto;margin:auto;}
 .secondnav{width:100%;height:auto;margin:auto;border-radius:5px;background-color:#191930;#c9c9c9;margin-bottom:10px;color:;padding:px}
 
@@ -14,6 +18,9 @@ body > #container { height: auto; min-height: 100%; }
 .duct{background-color:red;border-radius:5px;float:left;heifght:30px;display:inline}
 
 .second2{display:none}
+
+.login {border:2px solid #191930;width:25%;margin:auto}
+.form-plug{bodrder:2px solid red;width:100%;text-align:center;background-color:#191930;color:white;font-weight:bold;padding:2px;font-size:20px}
 
 li {
     display:inline;
@@ -74,5 +81,11 @@ height:auto;}
 .containbody{width:100%;height:auto;margin:auto;}
 
 .recoimg{width:100%;border-bottom:2px solid gray;border-radius:5px;}
+
+.mobile {width:100%;height:auto;}
+
+.productdiv{width:100%;height:auto;border:2px solid gray;float:none;background-color:white;font-weight:bold;border-radius:5px;overflow:;padding:10px;clear:both}
+
+.Product_img{width:100%;height:auto;float:left;bordder:2px solid green;}
 
 }

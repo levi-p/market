@@ -4,15 +4,18 @@
 {% block content %}
 
 
-<div style="width:100%;height:auto;borderr:2px solid red;overflow:auto;background-color:#eaeaea;padding:10px">
-    <div style="width:30%;height:auto;float:left;borrder:2px solid green;">
+
+<div style="width:100%;height:auto;bordrer:2px solid red;overflow:auto;background-color:#eaeaea;padding:10px">
+    <div class="Product_img" style="margin-bottom:5px">
         <div style="width:90%;height:auto;border:2px solid gray;padding:10px;margin:auto;border-radius:5px;background-color:white">
         <a><img src="{{product.pic1.url}}" alt='img' style="display:block;width:90%;height:auto;border-bottom:2px solid gray;margin:auto;border-radius:5px" ></a>
-        <div style="background-color:pink;width:30%;height:auto;margin:auto;border-radius:5px"><p style="text-align:center">change photo</p></div>
+        <div style="background-color:pink;width:30%;height:auto;margin:auto;border-radius:5px"><p style="text-align:center">{{product.Product_name}}</p></div>
         </div>
     </div>
 
-   <div style='width:70%;height:auto;border:2px solid gray;float:right;background-color:white;font-weight:bold;border-radius:5px;overflow:;padding:10px'>
+
+
+   <div class='productdiv' style=''>
    <h3>Product Details</h3>
    Name &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp &nbsp&nbsp {{product.Product_name}}</br>
    Price &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp &nbsp&nbsp&nbsp {{product.Price}}</br>
@@ -22,9 +25,6 @@
    Name &nbsp&nbsp &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp {{product.seller}}</br>
    Location &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp&nbsp {{sellerprofile.location}}</br>
    Phone number &nbsp&nbsp&nbsp  <a href="tel:{{sellerprofile.Phone_number}}">{{sellerprofile.Phone_number}}  <span style='background-color:red;color:white;border-radius:5px;padding:10px;font-size:12px;'>call now!</span></a></br>
-   
-   
-   
    
    </div>
 
