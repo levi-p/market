@@ -76,7 +76,7 @@
 </div>
 
 
-<div class='second2' style="width:100%;height:;clear:both;background-color:;">
+<div class='second2' style="width:100%;height:;clear:both;background-color:blue;">
 <ul clasds="nav navbar-nav" style="padding-left:0;display:;">
 {% if user.is_authenticated %}
 
@@ -111,7 +111,7 @@
 
 </div>
 
-<div style="position:relative;top:-35px;">
+<div class='fuck' style="position:relative;top:-35px;">
 {% if user.is_authenticated %}
     <span id="dd2" class="duct" style=""><a href="{% url "main:ProductUpload" %}"><li  style="color:white;font-size:14px;">{{request.user|capfirst}} Upload a product!</li></a></span>
    {% else %}
