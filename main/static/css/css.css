@@ -6,6 +6,8 @@ body > #container { height: auto; min-height: 100%; }
     box-sizing: border-box;
 }
 
+#latem{height:50%}
+
 .Product_img{width:30%;height:auto;float:left;borrder:2px solid green;}
 
 .productdiv{width:70%;height:auto;border:2px solid gray;float:right;background-color:white;font-weight:bold;border-radius:5px;overflow:;padding:10px}
@@ -88,6 +90,7 @@ height:auto;}
 
 .Product_img{width:100%;height:auto;float:left;bordder:2px solid green;}
 
+#latem{height:auto}
 .fuck{display:none}
 
 }
