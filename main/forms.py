@@ -5,4 +5,4 @@ from .models import Product
 class ProductUploadForm(forms.ModelForm):
     class Meta:
         model=Product
-        exclude=('seller','recommended')
+        exclude=('seller','recommended','time')

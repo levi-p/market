@@ -42,11 +42,14 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'main',
     'register',
+    'spirit',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    #'balancer.middleware.PinningSessionMiddleware',
+    
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',

@@ -1,5 +1,5 @@
-from django.shortcuts import render
-from .models import Product
+from django.shortcuts import render,redirect
+from .models import Product,Category
 from register.models import userprofile
 from .forms import ProductUploadForm
 
@@ -16,8 +16,9 @@ def ProductUpload(request):
 
     
     form=ProductUploadForm(request.POST,request.FILES)
+    
     if form.is_valid():
-
+        
         Product_name=form.cleaned_data['Product_name']
         price=form.cleaned_data['Price']
         discription= form.cleaned_data['Discription']
@@ -27,8 +28,13 @@ def ProductUpload(request):
         pic3=form.cleaned_data['pic3']
         
         P_d=Product(seller=request.user,Product_name=Product_name,Discription=discription,Price=price,category_name=category,pic1=pic1,pic2=pic2,pic3=pic3)
-   
+        #P_d=Product(Product_name=Product_name,Discription=discription,Price=price,pic1=pic1,pic2=pic2,pic3=pic3)
         P_d.save()
+        categ=Category.objects.get(Name=category)
+        return redirect(categ.get_absolute_url())
+        
+    else:
+        error='errr'
         
 
     return render(request,'UploadProduct.html',locals())

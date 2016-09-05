@@ -13,7 +13,7 @@ body > #container { height: auto; min-height: 100%; }
 .containbody{width:65%;height:auto;margin:auto;}
 .secondnav{width:100%;height:auto;margin:auto;border-radius:5px;background-color:#191930;#c9c9c9;margin-bottom:10px;color:;padding:px}
 
-.recoproduct{width:30%;height:auto;margin:auto;border-radius:5px;background-color:;margin-bottom:10px;color:white;border:2px solid gray;float:left;margin-left:20px;padding:10px}
+.recoproduct{width:30%;height:auto;margin:auto;border-radius:5px;background-color:;margin-bottom:10px;color:white;border:2px solid gray;float:left;margin-left:15px;padding:10px}
 
 .duct{background-color:red;border-radius:5px;float:left;heifght:30px;display:inline}
 

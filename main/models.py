@@ -27,7 +27,7 @@ class Product(models.Model):
     pic2=models.ImageField(blank=True)
     pic3=models.ImageField(blank=True)
     recommended=models.CharField(max_length=30, default='',blank=True)
-    time=models.DateField(default=timezone.now)
+    time=models.DateField(default=timezone.now,blank=True)
     
 
 

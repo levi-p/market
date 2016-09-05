@@ -4,11 +4,13 @@
 <div class="login mobile">
 <div style="" class="form-plug">Sign Up</div>
 <form method="post" action='.'>
+
+
 {% csrf_token %}
 <p>
 <div style="width:55%;margin:auto;height:auto;color:;bofrder:2px solid red">
 
-
+{{error2}}</br>
 
 
 <span style="color:;white">{{form.Name.label_tag}}</br><span>
