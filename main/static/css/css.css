@@ -33,7 +33,8 @@ li {
     text-decoration: none;
 }
 
-.allproducts{width:20%;height:auto;margin:auto;border-radius:5px;background-color:;margin-bottom:30px;color:white;border:2px solid gray;float:left;margin-left:10%;padding:10px;color:red;text-align:center}
+.allproducts{
+background-cjolor:#eaeaea;width:50%;clear:both;float:none;height:auto;margin:auto;overflow:hidden;margin-bottom:10px;border-radius:5px;color:white;border:1px solid gray;#dedbdb;margin-left:;padding:10px;color:red;text-align:center}
 
 .recoimg{width:100%;border-bottom:2px solid gray;border-radius:5px;}
 

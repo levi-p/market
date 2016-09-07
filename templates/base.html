@@ -106,21 +106,25 @@
 </div>
 
 
+<style>
+
+</style>
 
 
 
 
 
-
-{% for i in reco %}
+{% for i in reco|dictsortreversed:'time' %}
 
 
 
 <a href="{{i.get_absolute_url}}">
 
 
-<div class='recoproduct' id='latem' style="margin-top:10px;"><p style="color:#1E90FF;black;text-align:center">new!</p>
-<img class='recoimg' src="{{i.pic1.url}}" style=""  alt="gg"></div></a>
+<div class='recoproduct' id='latem' style="margin-top:10px;padding:px"></br><p><span style='font-weight:bold;background-color:green;color:white;border-radius:5px;padding:10px;font-size:12px;position:relative;tofp:;margin-top:10px'>new! k{{i.Price}}</span></p>
+<img class='recoimg' src="{{i.pic1.url}}" style=""  alt="gg">
+
+</div></a>
 {% endfor %}
 
 
