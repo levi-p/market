@@ -25,9 +25,9 @@ def ProductUpload(request):
         category=form.cleaned_data['category_name']
         pic1=form.cleaned_data['pic1']
         pic2=form.cleaned_data['pic2']
-        pic3=form.cleaned_data['pic3']
         
-        P_d=Product(seller=request.user,Product_name=Product_name,Discription=discription,Price=price,category_name=category,pic1=pic1,pic2=pic2,pic3=pic3)
+        
+        P_d=Product(seller=request.user,Product_name=Product_name,Discription=discription,Price=price,category_name=category,pic1=pic1,pic2=pic2)
         #P_d=Product(Product_name=Product_name,Discription=discription,Price=price,pic1=pic1,pic2=pic2,pic3=pic3)
         P_d.save()
         categ=Category.objects.get(Name=category)

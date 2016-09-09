@@ -3,7 +3,8 @@
 
 {% block content %}
 
-{{error}}
+
+<div class='upload mobile' style=''>
 <form enctype="multipart/form-data" method="post" action='.' >
 {% csrf_token %}
 
@@ -31,14 +32,14 @@
 {{form.pic2.label_tag}}</br>
 {{form.pic2}}</br>
 
-{{form.pic3.label_tag}}</br>
-{{form.pic3}}</br>
 
 
 
 
-<input type="submit" value="upload" />
+
+<input type="submit" style='width:96px;background-color:green;border:2px solid green;color:white;height:40px;border-radius:5px' value="upload!" />
 </form>
+</div>
 
 {% endblock %}
 

@@ -7,6 +7,7 @@ body > #container { height: auto; min-height: 100%; }
 }
 
 #latem{height:50%}
+.upload{width:25%;height:auto;margin:auto;borgder:2px solid red}
 
 .Product_img{width:30%;height:auto;float:left;borrder:2px solid green;}
 
