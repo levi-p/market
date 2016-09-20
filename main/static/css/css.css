@@ -6,6 +6,10 @@ body > #container { height: auto; min-height: 100%; }
     box-sizing: border-box;
 }
 
+
+.notify2{background-color:#ececec;width:100%}
+.notify{width:50%;height:auto;margin:auto;borrder:2px solid red}
+
 #latem{height:50%}
 .upload{width:25%;height:auto;margin:auto;borgder:2px solid red}
 
@@ -94,5 +98,8 @@ height:auto;}
 
 #latem{height:auto}
 .fuck{display:none}
+
+.notify2{background-color:#ececec;width:100%}
+.notify{width:100%;height:auto;margin:auto;bordder:2px solid red}
 
 }

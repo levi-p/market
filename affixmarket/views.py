@@ -1,8 +1,21 @@
 from django.shortcuts import render
-from main.models import Product,Category
+from main.models import Product,Category,Comment
+
+from main.context_p import conte
+
 
 def home(request):
     #ds=request.user.email
+    #notify=comment.objects.filter(is_read=False).filter(
+    
+    #
+    #comment_list=[x for x in d if x.products in c]
+    #cd=conte(request)
+    #noti_number=cd.noti_number
+
+    idi=request.user.id
+        
+
     caet=Category.objects.all()
     reco=Product.objects.filter(recommended='yes')
     return render(request,'base.html',locals())
