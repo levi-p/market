@@ -85,7 +85,7 @@
 
 
 <div class='containbody'>
-<div class='secondnav' style="">
+<div class='secondnav' style="display:none">
 <ul clasds="nav navbar-nav" style="padding-left:0;display:;">
 <span id="ddw" style="font-size:16px"><a href="/"><li>Home |</li></a></span>
     {% for i in cat %}
@@ -97,21 +97,78 @@
 
 </div>
 
-<div class='second2' style="width:100%;height:;clear:both;background-color:blue;">
-<ul clasds="nav navbar-nav" style="padding-left:0;display:;">
-{% if user.is_authenticated %}
 
 
 
 
-    <span id="dd2" class="duct" style=""><a href="{% url "main:ProductUpload" %}"><li style="color:white;font-size:14px;margin-left:0px">{{request.user|capfirst}} Upload a product!</li></a></span>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- this is for mobile navigation  <img src="{% static 'Online-Store.jpg' %}" stylhe="" idd="logo" alt="gg">   -->
+
+
+<style>
+
+</style>
+
+
+<div class='test2' style='height:50%;background-image:url({% static 'Online-Store.jpg' %})'>
+
+ <div  style="width:70%;background-color:#1E90FF;height:auto;font-weight:bold;padding:5px;margin:auto;position:relative;topds:200px;text-align:center">
+
+    {% if user.is_authenticated %}
+
+
+
+
+    <a style="color:white" href="{% url "main:ProductUpload" %}">{{request.user|capfirst}} Upload a product!</a>
    {% else %}
-   <span id="dd2" class="duct" style=""><li style="color:red;margin-left:0px;display:inline"><a style="color:white;margin-left:1px" href="{% url "Sign_up:Sign_up" %}">sign up to upload a product!</a></li></span>
+   <span id="dd" style="color:white;border-right:none"><a style="color:white" href="{% url "login" %}">login /</a><a style="color:white" href="{% url "Sign_up:Sign_up" %}"> sign up</a> to upload a product</span>
    {% endif %}
 
-</ul>
+
 
 </div>
+
+
+
+
+
+
+
+
+</div>
+
+
+{% for i in cat %}
+<div style='width:100%;height:auto;background-color:;color:orange;border-bottom:1px solid black ;margin-bottom:2px;tefxt-align:center;font-weight:bold;padding:3px;font-size:20px'>
+
+<a style='color:orange;' href="{{i.get_absolute_url}}">{{i}}</a>
+
+</div>{% endfor %}
+
+
+
+<!-- it ends here -->
+
+
+
+
+
+
+
 
 
 <style>
@@ -129,7 +186,7 @@
 <a href="{{i.get_absolute_url}}">
 
 
-<div class='recoproduct' id='latem' style="margin-top:10px;padding:px"></br><p><span style='font-weight:bold;background-color:green;color:white;border-radius:5px;padding:10px;font-size:12px;position:relative;tofp:;margin-top:10px'>new! k{{i.Price}}</span></p>
+<div class='recoproduct' id='latem' style="margin-top:10px;padding:px"></br><p><span style='font-weight:bold;background-color:#1E90FF;color:white;border-radius:5px;padding:10px;font-size:12px;position:relative;tofp:;margin-top:10px'>new! k{{i.Price}}</span></p>
 <img class='recoimg' src="{{i.pic1.url}}" style=""  alt="gg">
 
 </div></a>
@@ -138,13 +195,7 @@
 
 </div>
 
-<div class='fuck' style="position:relative;top:-35px;">
-{% if user.is_authenticated %}
-    <span id="dd2" class="duct" style=""><a href="{% url "main:ProductUpload" %}"><li  style="color:white;font-size:14px;">{{request.user|capfirst}} Upload a product!</li></a></span>
-   {% else %}
-   <span id="dd2" class="duct" style="color:"><li><a style="color:white" href="{% url "Sign_up:Sign_up" %}">sign up to upload a product!</a></li></span>
-   {% endif %}
-</div>
+
 
 
 {% endblock%}
