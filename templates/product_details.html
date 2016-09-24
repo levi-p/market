@@ -5,9 +5,9 @@
 
 
 
-<div style="width:100%;height:auto;bordrer:2px solid red;overflow:hidden;background-color:#eaeaea;padding:10px">
+<div style="width:100%;height:auto;bordrer:1px solid red;overflow:hidden;background-color:#eaeaea;padding:10px">
     <div class="Product_img" style="margin-bottom:5px">
-        <div style="width:90%;height:auto;border:2px solid gray;padding:10px;margin:auto;border-radius:5px;background-color:white">
+        <div style="width:100%;height:auto;border:1px solid gray;padding:10px;margin:auto;border-radius:5px;background-color:white">
         <a><img src="{{product.pic1.url}}" alt='img' style="display:block;width:90%;height:auto;border-bottom:2px solid gray;margin:auto;border-radius:5px" ></a>
         <div style="background-color:pink;width:30%;height:auto;margin:auto;border-radius:5px"><p style="text-align:center">{{product.Product_name}}</p></div>
         </div>
@@ -21,27 +21,42 @@
    Price &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp &nbsp&nbsp&nbsp {{product.Price}}</br>
    Category &nbsp &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp&nbsp&nbsp{{product.category_name}}</br>
    Description &nbsp &nbsp&nbsp &nbsp&nbsp&nbsp&nbsp{{product.Discription}}
-   <h3>Seller Contacts</h3>
+   <h3 id=''>Seller Contacts</h3>
    Name &nbsp&nbsp &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp {{product.seller|capfirst}}</br>
    Location &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp&nbsp {{sellerprofile.location}}</br>
-   Phone number &nbsp&nbsp&nbsp  <a href="tel:{{sellerprofile.Phone_number}}">{{sellerprofile.Phone_number}}  <span style='background-color:red;color:white;border-radius:5px;padding:10px;font-size:12px;'>call now!</span></a></br>
-  <h3>Negotiations<h3>
+   
+
+   <span id='d' style='dispelay:none'>Phone number &nbsp&nbsp&nbsp <a idd='d'   href="tel:{{sellerprofile.Phone_number}}">{{sellerprofile.Phone_number}}  <span style='font-weight:bold;background-color:red;color:white;border-radius:5px;padding:10px;font-size:12px;'>call now!</span></span> </a></br>
+
+<form action='{% url 'call' %}' style='display:none' method='post' name='form1'>
+{% csrf_token %}
+<input type='button' name='myButton' value='Button clicked 0 times' />
+</form>
+
+
+<script>function levi1(){  document.getElementById('d').style.display='inline' ,document.form1.submit()}</script>
+ <h3>Negotiations</h3>
  {% for i in h %}
-      <span style="color:#1E90FF"> {{i}}</span></br>
-       {{i.comment}}</br></br>
+      <span style="color:#1E90FF"> {{i|capfirst}}</span></br>
+      <span styeele="background-color:gray;width:100%"> {{i.comment}}</span></br></br>
    {% endfor %}
 
 
-   <h3>negotiate</h3>
+   <h3>Negotiate</h3>
 
    <div class='upload mobile' style='margin:1px;float:left'>
        <form enctype="multipart/form-data" method="post" action='.' >
-           {% csrf_token %}
+          {% if user.is_authenticated %}
+            {% csrf_token %}
+              Write your negotiation
+            {{form.comment}}
+          {% else %}
             {{form.Name.label_tag}}</br>
             {{form.Name}}</br>
             
-             write your negotiation
+             Write your negotiation
             {{form.comment}}
+          {% endif %}
            
        <input type="submit" style='width:96px;background-color:green;border:2px solid green;color:white;height:40px;border-radius:5px' value="Send" />
        </form>

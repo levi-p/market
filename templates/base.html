@@ -87,9 +87,9 @@
 <div class='containbody'>
 <div class='secondnav' style="">
 <ul clasds="nav navbar-nav" style="padding-left:0;display:;">
-<span id="ddw" style="font-size:16px"><a href="/"><li>Home</li></a></span>
+<span id="ddw" style="font-size:16px"><a href="/"><li>Home |</li></a></span>
     {% for i in cat %}
-    <span idw="dd" style="font-size:14px;dispelay:inline;"><a href="{{i.get_absolute_url}}"><li style='colfor:black;#1E90FF;font-weight:none'>{{i}}</li></a></span>
+    <span idw="dd" style="font-size:14px;dispelay:inline;"><a href="{{i.get_absolute_url}}"><li style='colfor:black;#1E90FF;font-weight:none'>{{i}} |</li></a></span>
     {% endfor %}
 {% if user.is_authenticated %}
 <span idw="dd" style="font-size:14px;dispelay:inline;flogat:right"><a href="{% url 'main:notify' %}"><li>Notifications<span style='color:red;font-weight:bold;background-color:white'>({{comment_list|length}})</span></li></a></span>{% endif %}

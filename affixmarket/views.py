@@ -3,6 +3,8 @@ from main.models import Product,Category,Comment
 
 from main.context_p import conte
 
+def call(request):
+    return render(request,'productd_redirect.html',locals())
 
 def home(request):
     #ds=request.user.email

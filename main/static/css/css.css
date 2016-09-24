@@ -15,14 +15,14 @@ body > #container { height: auto; min-height: 100%; }
 
 .Product_img{width:30%;height:auto;float:left;borrder:2px solid green;}
 
-.productdiv{width:70%;height:auto;border:2px solid gray;float:right;background-color:white;font-weight:bold;border-radius:5px;overflow:;padding:10px}
+.productdiv{width:70%;height:auto;border:1px solid gray;float:right;background-color:white;font-weigrht:bold;border-radius:5px;overflow:;padding:10px}
 
 .containbody{width:65%;height:auto;margin:auto;}
 .secondnav{width:100%;height:auto;margin:auto;border-radius:5px;background-color:#191930;#c9c9c9;margin-bottom:10px;color:;padding:px}
 
-.recoproduct{width:30%;height:auto;margin:auto;border-radius:5px;background-color:;margin-bottom:10px;color:white;border:2px solid gray;float:left;margin-left:15px;padding:10px}
+.recoproduct{width:30%;height:auto;margin:auto;border-radius:5px;background-color:;margin-bottom:10px;color:white;border:1px solid gray;float:left;margin-left:15px;padding:10px}
 
-.duct{background-color:red;border-radius:5px;float:left;heifght:30px;display:inline}
+.duct{background-color:red;border-radius:3px;float:left;heifght:30px;display:inline}
 
 .second2{display:none}
 
@@ -69,11 +69,11 @@ height:auto;}
 /* mobile site */
 
 @media screen and (max-width:725px){
-.secondnav{width:100%;height:auto;margin:auto;border-radius:5px;background-color:#191930;#c9c9c9;margin-bottom:10px;color:;padding:px;ovnerflow:hidden}
+.secondnav{width:100%;height:auto;margin:auto;border-radius:0px;background-color:#191930;#c9c9c9;margin-bottom:10px;color:;padding:px;ovnerflow:hidden}
 
-.allproducts{width:100%;height:auto;margin:auto;border-radius:5px;background-color:;margin-bottom:30px;color:white;border:2px solid gray;float:left;margin-leeft:10%;padding:10px;color:red;text-align:center}
+.allproducts{width:100%;height:auto;margin:auto;border-radius:5px;background-color:;margin-bottom:30px;color:white;border:1px solid gray;float:left;margin-leeft:10%;padding:10px;color:red;text-align:center}
 
-.recoproduct{width:100%;height:auto;margin:auto;border-radius:5px;background-color:;margin-bottom:10px;color:white;border:2px solid gray;float:left;margin-lefft:5px;padding:10px;float:left;clear:both;}
+.recoproduct{width:100%;height:auto;margin:auto;border-radius:5px;background-color:;margin-bottom:10px;color:white;border:1px solid gray;float:left;margin-lefft:5px;padding:10px;float:left;clear:both;}
 
 #affmg {display:block;positsion:relative;tdop:-20px;margifn:auto}
 #affmg2 {display:none}
@@ -92,7 +92,7 @@ height:auto;}
 
 .mobile {width:100%;height:auto;}
 
-.productdiv{width:100%;height:auto;border:2px solid gray;float:none;background-color:white;font-weight:bold;border-radius:5px;overflow:;padding:10px;clear:both}
+.productdiv{width:100%;height:auto;border:1px solid gray;float:none;background-color:white;fontr-weight:bold;border-radius:5px;overflow:;padding:10px;clear:both}
 
 .Product_img{width:100%;height:auto;float:left;bordder:2px solid green;}
 

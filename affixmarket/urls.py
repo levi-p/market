@@ -21,7 +21,7 @@ from django.views.static import serve
 from django.conf import settings
 
 urlpatterns = [
-   # url(r'^', include('spirit.urls')),
+    url(r'^call', views.call,name='call'),
     url(r'^products/(?P<name_id>[0-9]+)/',views.categoryView,name='category_all'),
     url(r'^main/', include('main.urls', namespace='main')),
     url(r'^sign_up/', include('register.urls', namespace='Sign_up')),

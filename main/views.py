@@ -22,7 +22,8 @@ def notify(request):
 def ProductView(request,Pk):
     product=Product.objects.get(pk=Pk)
     sellerprofile=userprofile.objects.get(first_name=product.seller)
-    
+    product.views+=1
+    product.save()
     
     #add user ro have read list
     h=Comment.objects.filter(products=product)
@@ -42,9 +43,12 @@ def ProductView(request,Pk):
         Name=form.cleaned_data['Name']
         comment=form.cleaned_data['comment']
         
-        
-        comm=Comment(Name=Name,comment=comment,products=product,read=request.user)
-        comm.save()
+        if request.user.is_authenticated():
+            comm=Comment(Name=request.user,comment=comment,products=product,read=request.user)
+            comm.save()
+        else:
+            comm=Comment(Name=Name,comment=comment,products=product,read=request.user)
+            comm.save()
         #reset all reads to include only poster
         Comment.objects.filter(products=product.id).update(read=str(request.user))
     

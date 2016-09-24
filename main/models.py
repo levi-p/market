@@ -17,6 +17,7 @@ class Category(models.Model):
        return reverse('category_all',kwargs={'name_id':self.id,})
 
 class Product(models.Model):
+    views=models.IntegerField(default=0)
     participants=models.TextField(default=0)
     seller=models.ForeignKey(User,related_name='seller',blank=True ,null=True)
     Product_name=models.CharField(max_length=30, default='')
