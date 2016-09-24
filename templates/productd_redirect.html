@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class='productdiv' style='height:auto;overflow:hidden;'>
+   <h3>Product Details</h3>
+   Name &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp &nbsp&nbsp {{product.Product_name}}</br>
+   Price &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp &nbsp&nbsp&nbsp {{product.Price}}</br>
+   Category &nbsp &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp&nbsp&nbsp{{product.category_name}}</br>
+   Description &nbsp &nbsp&nbsp &nbsp&nbsp&nbsp&nbsp{{product.Discription}}
+   <h3 id=''>Seller Contacts</h3>
+   Name &nbsp&nbsp &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp {{product.seller|capfirst}}</br>
+   Location &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp&nbsp {{sellerprofile.location}}</br>
+   
+   <span id='d' style=''>Phone number &nbsp&nbsp&nbsp <a idd='d'   href="tel:{{sellerprofile.Phone_number}}">{{sellerprofile.Phone_number}}  <span style='background-color:red;color:white;border-radius:5px;padding:10px;font-size:12px;'>call now!</span></span> </a></br>
+
+{% endblock %}

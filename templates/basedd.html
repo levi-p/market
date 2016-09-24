@@ -1,0 +1,135 @@
+<!Doctypt html>
+<html>
+<head>
+{% load static %}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="{% static 'css/css.css' %}" type="text/css" rel="stylesheet">
+ <link rel="stylesheet" type="text/css" href="{% static "bootstrap/css/bootstrap.css" %}">
+<script src="{% static "bootstrap/js/jquery.min.js" %}"></script>
+<script src="{% static "bootstrap/js/bootstrap.min.js" %}"></script>
+
+{% block title %}
+<title>Affixmw</title>
+{% endblock %}
+</head>
+<body>
+
+<div id="container" stylee="border: ;background-color;red">
+    
+
+
+       <!--<div id="content" style="background-color:red;">
+<div class="one" style="width:100%;height:auto;float:left;padding:0px;">-->
+
+
+
+  
+
+          <nav class="nadvbar navbar-inverse" style="background-color: #191930;border-coflor: #080808;margin-bottom:10px" role="navigation">
+                  <div class="navbar-header">
+      <button styfle="background-color:white" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+
+      
+              <div id="affmg" stsyle="position:relative;top:-50px;float:left;border:;height:200px;width:70%;margind:5px;"><img src="{% static 'Affix2.png' %}" stylhe="" id="logo" alt="gg"></div>
+
+                        </div>
+
+                <div class="collapse navbar-collapse" id="myNavbar">
+   <ul clasds="nav navbar-nav" style="padding-left:0;">
+<li><div id="affmg2" styele="background-color:red;"><img src="{% static 'Affix2.png' %}" stylhe="" id="logo" alt="gg">
+</div></li>
+    <span id="dd" style=""><a href="/"><li>Home</li></a></span>
+    {% for i in cat %}
+    <span id="dd" style=""><a href="{{i.get_absolute_url}}"><li>{{i}}</li></a></span>
+    {% endfor %}
+   {% if user.is_authenticated %}
+    <span id="dd2" style=""><a href="{% url "logout" %}"><li>logout</li></a></span>
+   {% else %}
+   <span id="dd2" style="color:white"><li><a style="color:white" href="{% url "login" %}">login</a>/<a style="color:white" href="{% url "Sign_up:Sign_up" %}">sign up</a></li></span>
+   {% endif %}
+
+
+   </ul>
+  
+                       </div>
+
+                 
+
+
+
+</nav>
+{% block content %}
+
+<div class='containbody'>
+<div class='secondnav' style="">
+<ul clasds="nav navbar-nav" style="padding-left:0;display:;">
+<span id="ddw" style="font-size:16px"><a href="/"><li>Home</li></a></span>
+    {% for i in cat %}
+    <span idw="dd" style="font-size:14px;dispelay:inline;"><a href="{{i.get_absolute_url}}"><li style='colfor:black;#1E90FF;font-weight:none'>{{i}}</li></a></span>
+    {% endfor %}
+</ul>
+
+</div>
+
+
+<div class='second2' style="width:100%;height:;clear:both;background-color:;">
+<ul clasds="nav navbar-nav" style="padding-left:0;display:;">
+{% if user.is_authenticated %}
+
+
+
+
+    <span id="dd2" class="duct" style=""><a href="{% url "main:ProductUpload" %}"><li style="color:white;font-size:14px;margin-left:0px">{{request.user|capfirst}} Upload a product!</li></a></span>
+   {% else %}
+   <span id="dd2" class="duct" style=""><li style="color:red;margin-left:0px;display:inline"><a style="color:white;margin-left:1px" href="{% url "Sign_up:Sign_up" %}">sign up to upload a product!</a></li></span>
+   {% endif %}
+
+</ul>
+
+</div>
+
+
+
+
+
+
+
+
+{% for i in reco %}
+
+
+
+<a href="{{i.get_absolute_url}}">
+<div class='recoproduct'  style="margin-top:10px"><p style="color:#1E90FF;black;text-align:center">new!</p>
+<img class='recoimg' src="{{i.pic1.url}}" style=""  alt="gg"/></div></a>
+Name: &nbsp{{i}}</br>
+Price: {{i.Price}}</p></div>
+{% endfor %}
+
+
+</div>
+
+
+
+
+{% endblock%}
+
+
+
+
+
+
+{% block footer %}
+<footer style='background-color:#191940;clear:both;border-radius:5px;color:white;text-align:center;'>
+                <div class="container">
+                    <p class="pull-right">
+                    Contact:    affixmw@gmail.com<br></p>
+                    <p>    &copy; Affixmw 2016
+                    </p>
+                </div>
+            </footer>
+{% endblock%}
