@@ -5,6 +5,9 @@
 
 
 
+
+
+
 <div style="width:100%;height:auto;bordrer:1px solid red;overflow:hidden;background-color:#eaeaea;padding:10px">
     <div class="Product_img" style="margin-bottom:5px">
         <div style="width:100%;height:auto;border:1px solid gray;padding:10px;margin:auto;border-radius:5px;background-color:white">
@@ -28,10 +31,7 @@
 
    <span id='d' style='dispelay:none'>Phone number &nbsp&nbsp&nbsp <a idd='d'   href="tel:{{sellerprofile.Phone_number}}">{{sellerprofile.Phone_number}}  <span style='font-weight:bold;background-color:red;color:white;border-radius:5px;padding:10px;font-size:12px;'>call now!</span></span> </a></br>
 
-<form action='{% url 'call' %}' style='display:none' method='post' name='form1'>
-{% csrf_token %}
-<input type='button' name='myButton' value='Button clicked 0 times' />
-</form>
+
 
 
 <script>function levi1(){  document.getElementById('d').style.display='inline' ,document.form1.submit()}</script>

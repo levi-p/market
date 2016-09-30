@@ -1,27 +1,29 @@
 {% extends 'base.html' %}
 {% block content %}
 
+
+
+<div class='productsInc' style=''>
+
+
+{% for i in sub %}
+<div style='width:100%;height:auto;background-color:;color:orange;border-bottom:1px solid black ;margin-bottom:2px;tefxt-align:center;font-weight:bold;padding:3px;font-size:20px'>
+
+<a style='color:orange;' href="{{i.get_absolute_url}}">{{i}}</a>
+
+</div>{% endfor %}
+
+
+
 <h3 style='text-align:center'>Products in {{cat2}}</h3>
 <div stylde="background-color:#f3f1f1">
 
 {% for i in products|dictsortreversed:'time' %}
 
-
-
-
-<a href="{{i.get_absolute_url}}"><div class='allproducts' idh='latem' style="background-color:white">
-
-
-
-
-<p styldde="background-color:red;text-align:center"><img src="{{i.pic1.url}}" class="image" style="width:50%;border-bobttom:1px solid gray;border-radius:5px;float:left"  alt="gg"><span style='float:left;margin-left:10px;color:#1E90FF;font-weight:bold;font-size:16px'>{{i}}</span></br>
- 
-</p><p><span style='float:left;font-weight:bold;background-color:green;color:white;border-radius:5px;padding:10px;font-size:12px;position:relative;tofp:;margin-left:10px'>K{{i.Price}} click here for details!</span></br></br></a>
-
-</p></div>
-
+{% include "common_c.html" %}
 
 {% endfor %}
+</div>
 </div>
 
 {% endblock %}

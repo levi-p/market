@@ -8,9 +8,12 @@
 <form enctype="multipart/form-data" method="post" action='.' >
 {% csrf_token %}
 
+<span style='font-weight:bold'>choose sub category</span></br>
+{{form.sub_c}}</br>
+
 
 {{form.Product_name.label_tag}}</br>
-{{form.Product_name}}</br>
+{{form.Product_name|safe}}</br>
 
 
 {{form.Discription.label_tag}}</br>
@@ -29,7 +32,7 @@
 {{form.pic1}}</br>
 
 
-{{form.pic2.label_tag}}</br>
+{{form.pic2.label_tag}}(OPTIONAL)</br>
 {{form.pic2}}</br>
 
 

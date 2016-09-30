@@ -1,0 +1,15 @@
+
+{% extends 'base.html' %}
+{% block content %}
+
+
+<div class='productsInc' style=''>
+
+{% for i in products|dictsortreversed:'time' %}
+
+{% include "common_c.html" %}
+
+{% endfor %}
+</div>
+
+{% endblock %}

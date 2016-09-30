@@ -21,8 +21,9 @@ from django.views.static import serve
 from django.conf import settings
 
 urlpatterns = [
-    url(r'^call', views.call,name='call'),
+    url(r'^uploadWay', views.call,name='uploadWay'),
     url(r'^products/(?P<name_id>[0-9]+)/',views.categoryView,name='category_all'),
+    url(r'^products_sub/(?P<sub_id>[0-9]+)/',views.subCategoryView,name='subCategory_all'),
     url(r'^main/', include('main.urls', namespace='main')),
     url(r'^sign_up/', include('register.urls', namespace='Sign_up')),
     url('^', include('django.contrib.auth.urls')),

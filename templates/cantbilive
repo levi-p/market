@@ -1,0 +1,12 @@
+{% for i in subcategories %}
+      {% if i.category_name == x %}
+   
+<ul></br>
+    <li style='color:black'><a href="{% url 'main:ProductUpload' i.category_name.id %}">&nbsp&nbsp&nbsp&nbsp&nbsp {{i}}</a></li></br>
+   
+    {% endif %}
+    
+
+</ul>
+{% endfor %}
+
