@@ -47,6 +47,7 @@ class Product(models.Model):
     pic3=models.ImageField(blank=True)
     recommended=models.CharField(max_length=30, default='',blank=True)
     time=models.DateField(default=timezone.now,blank=True)
+    is_sold=models.CharField(max_length=5,default='no')
     
 
 

@@ -23,6 +23,7 @@
 
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:image" content="{% static 'Affix2.png' %}" />
 
 <link rel="stylesheet"  href="https://cdn.rawgit.com/levi-p/market/5fc513f/main/static/css/css.css">
  <!-- Latest compiled and minified CSS -->
@@ -60,16 +61,14 @@
 
   
 
-          <nav class="nadvbar navbar-inverse" style="background-color: #191930;border-coflor: #080808;margin-bottom:10px" role="navigation">
+        <nav class="navbar-inverse" style="background-color: #191930;border-coflor: #080808;margin-bottom:10px" role="navigation">
+       
                   <div class="navbar-header">
-      <button styfle="background-color:white" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-
+	<div><span id="dd3" style="clear:none;float:right"><a style="color:white" href="{% url 'Sign_up:profile' %} ">Profile</a></span></div>
       
-              <div id="affmg" stsyle="position:relative;top:-50px;float:left;border:;height:200px;width:70%;margind:5px;"><img src="{% static 'Affix2.png' %}" stylhe="" id="logo" alt="gg"></div>
+
+      		
+              <div id="affmg" stsyle="position:relative;top:-50px;float:left;height:200px;width:70%;margind:5px;"><a href="/"><img src="{% static 'Affix2.png' %}" style="" id="logo" alt="gg"></a></div>
 
                         </div>
 
@@ -77,14 +76,14 @@
    <ul clasds="nav navbar-nav" style="padding-left:0;">
 <li><div id="affmg2" styele="background-color:red;"><img src="{% static 'Affix2.png' %}" stylhe="" id="logo" alt="gg">
 </div></li>
-    <span id="dd" style=""><a href="/"><li>Home</li></a></span>
+    <span id="dd" style=""><a href="/"><li class='ll' style="color:white">Home</li></a></span>
     {% for i in cat %}
-    <span id="dd" style=""><a href="{{i.get_absolute_url}}"><li>{{i}}</li></a></span>
+    <span id="dd" style=""><a href="{{i.get_absolute_url}}"><li class='ll' style="color:white">{{i}}</li></a></span>
     {% endfor %}
    {% if user.is_authenticated %}
-    <span id="dd2" style=""><a href="{% url "logout" %}?next=/"><li>logout </li></a></span>
+    <span id="dd2" style=""><a href="{% url "logout" %}?next=/"><li class='ll' style="color:white">logout </li></a></span>
    {% else %}
-   <span id="dd2" style="color:white"><li><a style="color:white" href="{% url "login" %}">login</a>/<a style="color:white" href="{% url "Sign_up:Sign_up" %}">sign up</a></li></span>
+   <span id="dd2" style="color:white"><li style="color:white"><a class='ll' style="color:white" href="{% url "login" %}">login</a>/<a  href="{% url "Sign_up:Sign_up" %}">sign up</a></li></span>
    {% endif %}
 
 

@@ -5,6 +5,9 @@ body > #container { height: auto; min-height: 100%; }
  * {
     box-sizing: border-box;
 }
+.prof{width:50%;height:auto;margin:auto}
+
+.greenButton{width:96px;background-color:green;border:2px solid green;color:white;height:40px;border-radius:5px}
 
 .productsInc{width:50%;height:auto;margin:auto}
 
@@ -36,14 +39,17 @@ body > #container { height: auto; min-height: 100%; }
 .login {border:2px solid #191930;width:25%;margin:auto}
 .form-plug{bodrder:2px solid red;width:100%;text-align:center;background-color:#191930;color:white;font-weight:bold;padding:2px;font-size:20px}
 
-li {
+
+
+.ll {
     display:inline;
     
     
-    color: white;
+    color: ;
     
     text-decoration: none;
 }
+
 
 .allproducts{
 background-cjolor:#eaeaea;width:100%;clear:both;float:none;height:auto;margin:auto;overflow:hidden;margin-bottom:10px;border-radius:5px;color:white;border:1px solid gray;#dedbdb;margin-left:;padding:10px;color:red;text-align:center}
@@ -69,7 +75,7 @@ height:auto;}
 #dd2{padding:5px;border-radieus:5px;margin-right:10px;border-right:none;2px solid orange;display:block;float:right;border:none;font-weight: bold;}
 
 #dd{padding:5px;border-radieus:5px;margin-right:10px;border-right:2px solid orange;font-weight: bold;}
-
+#dd3{padding:5px;border-radieus:5px;margin-right:10px;border-right:2px solid orange;font-weight: bold;display:none}
 #affmg {display:none}
 
 
@@ -111,6 +117,7 @@ height:auto;}
 
 .reg{width:70%;margin:auto;height:auto;color:;bofrder:2px solid red}
 .productsInc{width:100%;height:auto;margin:auto}
+#dd3{padding:5px;border-radieus:5px;margin-right:10px;border-right:none;font-weight: bold;display:inline}
 
 
 }

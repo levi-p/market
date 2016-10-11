@@ -15,15 +15,17 @@
 
 
 
-<h3 style='text-align:center'>Products in {{cat2}}</h3>
-<div stylde="background-color:#f3f1f1">
+<div style='margin:;width:100%;height:auto;background-color:#dcdcdc;border-bottom:2px solid white;'><h3 style='text-align:center'>Products in {{cat2}}</h3>
+
+
 
 {% for i in products|dictsortreversed:'time' %}
-
+<div>
 {% include "common_c.html" %}
-
+</div>
 {% endfor %}
+
 </div>
-</div>
+<div>
 
 {% endblock %}

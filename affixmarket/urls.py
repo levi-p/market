@@ -27,7 +27,7 @@ urlpatterns = [
     url(r'^main/', include('main.urls', namespace='main')),
     url(r'^sign_up/', include('register.urls', namespace='Sign_up')),
     url('^', include('django.contrib.auth.urls')),
-   #url(r'^userp/', include('userprofiles.urls',)),
+    url(r'^preference/', include('UserPreference.urls',namespace='pref')),
     url(r'^$',views.home),
     
     url(r'^admin/', admin.site.urls),

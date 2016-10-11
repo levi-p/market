@@ -11,7 +11,7 @@ class ProductUploadForm(forms.ModelForm):
 
     class Meta:
         model=Product
-        exclude=('seller','recommended','time','pic3','views','participants')
+        exclude=('seller','recommended','time','pic3','views','participants','is_sold')
 
         widgets={'Product_name':forms.TextInput(attrs={'style':'width:100%;color:gray;','value':'enter product name','onfocus':"if (this.value=='enter product name') this.value='';"}),'Discription':forms.Textarea(attrs={'style':'width:100%;height:20%'}),'category_name':forms.Select(attrs={'style':'width:100%'}),'Price':forms.TextInput(attrs={'style':'width:100%'})}
 

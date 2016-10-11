@@ -4,25 +4,42 @@
 {% block content %}
 
 
-<div style="width:25%;height:auto;borderr:1px solid red;overflow:auto;background-color:#eaeaea">
+<div class="prof mobile" style="">
+
+
+<div style="width:25%;height:auto;borderr:1px solid red;overflow:auto;background-color:#eaeaea;float:left">
     
         
-        <a><img src="{{profile.profile_pic.url}}" alt='img' style="display:block;width:100%;height:auto;border:1px solid gray;margin:auto;border-radius:5px" ></a>
+        <a><img src="{{profile.profile_pic.url}}" alt='img' style="display:block;width:100%;height:20%;border:1px solid gray;margin:;border-radius:5px" ></a>
         
         
         
-</div>
-  <div style="background-color:green;width:25%;height:auto;margin:;border-radius:5px;color:white;font-weght:bold"><p style="text-align:left">Send message</p></div>
+</div><div style='margin:2px;width:25%;backgrdound-color:#dcdcdc;border-bottom:2px solid white;font-weight:bold;padding:2px;float:left'>
+  {{profile.first_name|capfirst}}</br>
+   <a href="{% url 'Sign_up:profile_editAll' %}">edit profile</a></br>
+   <a href="{% url 'pref:prefer' %}">edit preferences</a>
+   </div>
+	
+ 	
 
-   <div style='width:100%;height:auto;border:2px solid gray;float:none;clear:both;text-decoration:none'>
+   <div style='width:100%;height:auto;bordder:2px solid gray;float:none;clear:both;text-decoration:none'></br></div>
    
-   <div style='width:100%;background-color:#dcdcdc;border-bottom:2px solid white'> Username : {{profile.first_name}}</div>
-   <div style='width:100%;background-color:#dcdcdc;border-bottom:2px solid white'>Email &nbsp &nbsp &nbsp &nbsp: {{profile.email}}</br></div>
-   <div style='width:100%;background-color:#dcdcdc;border-bottom:2px solid white'>Location &nbsp&nbsp : {{profile.location}}</div>
    
+   <div style='margin:;width:100%;height:auto;background-color:#ededed;border-bottom:2px solid white;'>your products({{c|length}})</br>
+        
+	{% for i in c %}
+	<div>
+	{% include 'common_c.html' %}
+	</div>
+	{% endfor %}
+	
    
    
    </div>
+   
+   </div>
+
+
 
 
 
