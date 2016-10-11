@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class='upload mobile' style=''>
+<form enctype="multipart/form-data" method="post" action='.' >
+
+{% csrf_token %}
+
+<span style='font-weight:bold'>enter your user name to reset password</span></br>
+
+{{message}}
+
+
+{{form.as_p}}
+
+<input type="submit" style='width:96px;background-color:green;border:2px solid green;color:white;height:40px;border-radius:5px' value="reset!" />
+</form>
+</div>
+
+{% endblock %}
+

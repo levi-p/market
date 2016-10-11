@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="upload mobile" style>
+
+
+<form action='.' method='post' enctype='multipart/form-data'>
+
+{% csrf_token %}
+
+
+
+
+{{error}}</br>
+
+{{form.Last_name.label_tag}}</br>
+{{form.Last_name}}</br>
+
+{{form.location.label_tag}}</br>
+{{form.location}}</br>
+
+
+{{form.Phone_number.label_tag}}</br>
+{{form.Phone_number}}</br>
+
+{{form.email.label_tag}}</br>
+{{form.email|safe}}</br>
+
+{{form.Year_of_birth.label_tag}}</br>
+{{form.Year_of_birth}}</br>
+<input class="greenButton" type='submit' value='save' />
+
+{{first_name}}
+</form>
+</div>
+{% endblock %}
+

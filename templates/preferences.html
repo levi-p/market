@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style> form > li{color:black} </style>
+<div class='' style=''>
+<form enctype="multipart/form-data" method="post" action="{% url 'pref:prefer' %}" >
+
+<div class='f'>
+{% csrf_token %}
+{{form.as_p}}
+</div>
+
+<input type="submit" style='width:96px;background-color:green;border:2px solid green;color:white;height:40px;border-radius:5px' value="upload!" />
+</form>
+</div>
+
+
+{% endblock %}
