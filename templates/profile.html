@@ -8,10 +8,12 @@
 
 
 <div style="width:25%;height:auto;borderr:1px solid red;overflow:auto;background-color:#eaeaea;float:left">
-    
+        {% if profile.profile_pic %}
         
-        <a><img src="{{profile.profile_pic.url}}" alt='img' style="display:block;width:100%;height:20%;border:1px solid gray;margin:;border-radius:5px" ></a>
-        
+        <a><img src="{{profile.profile_pic.url}}" alt='img' style="display:block;width:100%;height:25%;border:1px solid gray;margin:;border-radius:5px" ></a>
+        {% else %}
+        <a><img src="{% static 'placeholders/profile.png' %}" alt='img' style="display:block;width:100%;height:auto;20%;border:1px solid gray;margin:;border-radius:5px" ></a>
+        {% endif %}
         
         
 </div><div style='margin:2px;width:25%;backgrdound-color:#dcdcdc;border-bottom:2px solid white;font-weight:bold;padding:2px;float:left'>

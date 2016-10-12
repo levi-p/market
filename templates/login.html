@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+{% if form.errors %}
+<p>Your username and password didn't match. Please try again.</p>
+{% endif %}
+{% if next %}
+{% if user.is_authenticated %}
+<p>Your account doesn't have access to this page. To proceed,
+please login with an account that has access.</p>
+{% else %}
+<p>Please login to see this page.</p>
+<
+{% endif %}
+{% endif %}
+
+
+<div class="login mobile" style="">
+<div class="form-plug" style=""><p>login</p></div>
+<form method="post" action=".">
+{% csrf_token %}
+<p>
+<div style="width:55%;margin:auto;height:auto;color:;bodrder:2px solid red">
+{{ form.Phone_number.label_tag}}</br>
+{{ form.Phone_number }}</br>
+
+{{ form.password.label_tag }}</br>
+{{ form.password }}</br>
+</p>
+<input type="submit" value="login" style="background-color:orange;border-radius:5px;" />
+<input type="hidden" name="next" value="{{ next }}"  />
+</form>
+{# Assumes you setup the password_reset view in your URLconf #}
+<p><a href="{% url 'Sign_up:reset' %}">Lost password?</a></p>
+</div>
+</div>
+{% endblock %}

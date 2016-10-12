@@ -6,10 +6,10 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 class Sign_up(models.Model):
-    First_name=models.CharField(max_length=30, default='')
+    First_name=models.CharField(max_length=30, default='',blank=True)
     Email=models.EmailField(blank=True,default='')
     password=models.CharField(max_length=30,default='')
-    enter_password=models.CharField(max_length=30,default='')
+    enter_password=models.CharField(max_length=30,default='',blank=True)
 
     def __str__(self):
         return self.Name

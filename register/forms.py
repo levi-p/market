@@ -2,6 +2,10 @@ from django import forms
 from .models import Sign_up,userprofile
 #
 
+class loginForm(forms.Form):
+    Phone_number = forms.CharField(required=True)
+    password = forms.CharField(widget=forms.TextInput(attrs={"type":"password"}),required=True)
+
 class Sign_up_form(forms.ModelForm):
     class Meta():
         model=Sign_up

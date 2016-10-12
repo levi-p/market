@@ -1,15 +1,39 @@
 from django.shortcuts import render,redirect
-from .forms import Sign_up_form ,Profile_form,ChangePasswordForm
+from .forms import Sign_up_form ,Profile_form,ChangePasswordForm,loginForm
 from django.views.decorators.csrf import csrf_exempt, csrf_protect
 from .models import Sign_up,userprofile
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate ,login
 import random
+from main.t import sendMessage
+ 
 
 
 
 
 # Create your views here.
+
+def signIn(request):
+    
+    try:
+        form=loginForm(request.POST)
+        if form.is_valid():
+            User_phone=form.cleaned_data['Phone_number']
+            
+            password1 = form.cleaned_data['password']
+
+            number = userprofile.objects.get(Phone_number = User_phone)
+            User_name = str(number.first_name)
+
+            log=authenticate(username=User_name,password=form.cleaned_data['password'])
+
+            login(request,log)
+            return redirect('/')
+        #else: return redirect('/')
+
+
+    except Exception,e: error="enter the correct phone number"+str(e)
+    return render(request,'login.html',locals())
 
 
 def Sign_up_v(request):
@@ -41,8 +65,8 @@ def Sign_up_v(request):
 
 def profile(request):
     
-
-    profile=userprofile.objects.get(email=request.user.email)
+    
+    profile=userprofile.objects.get(first_name__id=request.user.id)
     return render(request,'profile.html',locals())
 
 def Profile_edit(request,template):
@@ -50,7 +74,7 @@ def Profile_edit(request,template):
     
     init = {"location":"ll",}
     
-    if request.method == 'POST' :
+    if template=='Profile_edit.html' :
         form=Profile_form(request.POST,request.FILES)
         my=request.user.id
         try:
@@ -93,16 +117,32 @@ def Profile_edit(request,template):
     
 
 def changePassword(request):
-     form=ChangePasswordForm(request.POST)
+    form=ChangePasswordForm(request.POST)
+    try: 
      if form.is_valid():
          adp=random.randrange(1,7)
-         User_name=form.cleaned_data['user_name']
-         u=User.objects.get(username=User_name)
-         u.set_password(str(User_name) + str(adp))
-         message="your password has been changed!, you will receive an sms soon"# + str(adp)
-         u.save()
+         User_phone=form.cleaned_data['user_name']
+         number = userprofile.objects.get(Phone_number = User_phone)
+         User_name = number.first_name
 
-     return render(request,'passChange.html',locals())
+
+         u=User.objects.get(username=User_name)
+         password=str(User_name) + str(adp)
+         u.set_password(password)
+         u.save()
+         first_name = u.username
+         msg= str(User_name) + " " + "your password at affixmw.com is" + " " + password
+         #username)
+         phone=str(number.Phone_number)
+         send=sendMessage(phone,msg)
+         send.go()
+         return redirect('Sign_up:profile_editAll')
+     else: pass
+        
+    except Exception,e:error="please enter the correct username" + str(e)
+         
+
+    return render(request,'passChange.html',locals())
 
 
 

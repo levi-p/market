@@ -80,11 +80,11 @@
     {% for i in cat %}
     <span id="dd" style=""><a href="{{i.get_absolute_url}}"><li class='ll' style="color:white">{{i}}</li></a></span>
     {% endfor %}
-   {% if user.is_authenticated %}
+   <!--{% if user.is_authenticated %}
     <span id="dd2" style=""><a href="{% url "logout" %}?next=/"><li class='ll' style="color:white">logout </li></a></span>
    {% else %}
    <span id="dd2" style="color:white"><li style="color:white"><a class='ll' style="color:white" href="{% url "login" %}">login</a>/<a  href="{% url "Sign_up:Sign_up" %}">sign up</a></li></span>
-   {% endif %}
+   {% endif %}-->
 
 
    </ul>
@@ -96,6 +96,8 @@
 
 
 </nav>
+<div style="width:100%;float:left;text-align:right"><a href="/"><span style="margin-right:20px;font-weight:bold">Home</a></span></br></div>
+
 {% block content %}
 
 
@@ -155,7 +157,7 @@
     <span idw="dd" style="font-size:14px;dispelay:inline;flogat:right"><a style='color:white' href="{% url 'main:notify' %}">Notifications<span style='color:red;font-weight:bold;background-color:white'>({{comment_list|length}})</span></a></span>
 
    {% else %}
-   <span id="dd" style="color:white;border-right:none"><a style="color:white" href="{% url "login" %}">login /</a><a style="color:white" href="{% url "Sign_up:Sign_up" %}"> sign up</a> to upload a product</span>
+   <span id="dd" style="color:white;border-right:none"><a style="color:white" href="{% url "Sign_up:log" %}">login /</a><a style="color:white" href="{% url "Sign_up:Sign_up" %}"> sign up</a> to upload a product</span>
    {% endif %}
 
 
