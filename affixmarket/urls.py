@@ -21,6 +21,7 @@ from django.views.static import serve
 from django.conf import settings
 
 urlpatterns = [
+    url(r'order',include('orders.urls' ,namespace='order')),
     url(r'^uploadWay', views.call,name='uploadWay'),
     url(r'^products/(?P<name_id>[0-9]+)/',views.categoryView,name='category_all'),
     url(r'^products_sub/(?P<sub_id>[0-9]+)/',views.subCategoryView,name='subCategory_all'),

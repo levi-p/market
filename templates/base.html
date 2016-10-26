@@ -25,7 +25,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:image" content="{% static 'Affix2.png' %}" />
 
-<link rel="stylesheet"  href="https://cdn.rawgit.com/levi-p/market/5fc513f/main/static/css/css.css">
+<link rel="stylesheet"  href="https://cdn.rawgit.com/levi-p/market/5eb5db0/main/static/css/css.css">
  <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
@@ -96,7 +96,7 @@
 
 
 </nav>
-<div style="width:100%;float:left;text-align:right"><a href="/"><span style="margin-right:20px;font-weight:bold">Home</a></span></br></div>
+<div style="width:100%;float:left;text-align:right"><a href="/"><span style="margin-right:20px;font-weight:bold;color:white">Hpome</a></span></br></div>
 
 {% block content %}
 
@@ -145,7 +145,7 @@
 
 <div class='test2' style='height:50%;background-image:url({% static 'Online-Store.jpg' %});background-repeat:no-repeat'>
 
- <div  style="width:70%;background-color:#1E90FF;height:auto;font-weight:bold;padding:5px;margin:auto;position:relative;topds:200px;text-align:center">
+ <div  style="width:70%;background-color:#191940;#1E90FF;height:auto;font-weight:bold;padding:5px;margin:auto;position:relative;topds:200px;text-align:center">
 
     {% if user.is_authenticated %}
 
@@ -175,7 +175,7 @@
 
 
 {% for i in cat|dictsort:'Name' %}
-<div style='width:100%;height:auto;background-color:;color:orange;border-bottom:1px solid black ;margin-bottom:2px;tefxt-align:center;font-weight:bold;padding:3px;font-size:20px'>
+<div style='width:100%;height:auto;background-color:#800000;color:orange;border-bottom:1px solid black ;margin-bottom:2px;tefxt-align:center;font-weight:bold;padding:3px;font-size:20px'>
 
 <a style='color:orange;' href="{{i.get_absolute_url}}">{{i}}</a>
 
@@ -228,11 +228,11 @@
 
 
 {% block footer %}
-<footer style='background-color:#191940;clear:both;border-radius:5px;color:white;text-align:center;'>
+<footer style='background-color:#191940;clear:both;border-radius:;color:white;text-align:center;'>
                 <div class="container">
-                    <p class="pull-right">
-                    Contact:    affixmw@gmail.com<br></p>
-                    <p>    &copy; Affixmw 2016
+                    <p cladss="pull-right">
+                    Contact:    affixmw@gmail.com</br></p>
+                    <p>    &copy; A Levi Mwase production 2016
                     </p>
                 </div>
             </footer>

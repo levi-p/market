@@ -1,11 +1,14 @@
 from django.shortcuts import render,redirect
-from .forms import Sign_up_form ,Profile_form,ChangePasswordForm,loginForm
+from .forms import Sign_up_form ,Profile_form,ChangePasswordForm,loginForm,Profile_form2
 from django.views.decorators.csrf import csrf_exempt, csrf_protect
 from .models import Sign_up,userprofile
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate ,login
 import random
 from main.t import sendMessage
+from django.contrib.auth.decorators import login_required
+from main.models import Product
+from UserPreference.models import Preference
  
 
 
@@ -28,7 +31,7 @@ def signIn(request):
             log=authenticate(username=User_name,password=form.cleaned_data['password'])
 
             login(request,log)
-            return redirect('/')
+            return redirect('Sign_up:profile')
         #else: return redirect('/')
 
 
@@ -62,39 +65,48 @@ def Sign_up_v(request):
         except Exception,e:
             error2="you are already registered, please login"+ str(e)
         return render(request,'sign_up.html',locals())
-
+@login_required(redirect_field_name='login',login_url="Sign_up:log")
 def profile(request):
     
+    products=Product.objects.all()
+    try:
+        preference=Preference.objects.get(use_r__first_name=request.user)
+        productlist=[i for i in products if str(i.sub_c.category_name) in preference.I_like ]
+    except: pass
     
     profile=userprofile.objects.get(first_name__id=request.user.id)
     return render(request,'profile.html',locals())
 
+@login_required(redirect_field_name='login',login_url="Sign_up:log")
 def Profile_edit(request,template):
 
     
     init = {"location":"ll",}
-    
+    my=request.user.id
+    form2=Profile_form2(request.POST,request.FILES)
     if template=='Profile_edit.html' :
-        form=Profile_form(request.POST,request.FILES)
-        my=request.user.id
+        
+        
         try:
         #
         #see if user already has already created a profile
             
             get_prof_by_user_id=userprofile.objects.get(user_id=my)
-            if form.is_valid():
-                location=form.cleaned_data['location']
-                Phone_number=form.cleaned_data['Phone_number']
-                year_of_birth = form.cleaned_data['Year_of_birth']
-                last_name = form.cleaned_data['Last_name']
+            
+            if form2.is_valid():
+                
+                location=form2.cleaned_data['location']
+                Phone_number=form2.cleaned_data['Phone_number']
+                #year_of_birth = form.cleaned_data['Year_of_birth']
+                #last_name = form.cleaned_data['Last_name']
                 #this is to update an already esisting profile
                 try :
-                    obj=userprofile.objects.filter(user_id=my).update(first_name=request.user,email=request.user.email,location=location,
-                         Phone_number=Phone_number,Year_of_birth=year_of_birth,Last_name=last_name,)
+                    obj=userprofile.objects.filter(user_id=my).update(location=location,
+                         Phone_number=Phone_number)
                     return redirect('/')
-                except:
-                    error='Please enter a valid phone number'
-            else: pass
+                except Exception,e:
+                    error='Please enter a valid phone number'+ str(e)
+            else: form2=Profile_form2()
      
 
         except:
@@ -103,15 +115,33 @@ def Profile_edit(request,template):
             P_obj.save()
         
     elif template=='Profile_editAll.html' :
-        try:
-            Instance=userprofile.objects.get(user_id=request.user.id).__dict__
-            form=Profile_form(initial=Instance)
-        except :pass
-    else: 
-        try:
+     # if request.method=='POST':
+
+        form=Profile_form(request.POST,request.FILES)
+        if   form.is_valid():
+                location=form.cleaned_data['location']
+                Phone_number=form.cleaned_data['Phone_number']
+                year_of_birth = form.cleaned_data['Year_of_birth']
+                last_name = form.cleaned_data['Last_name']
+                try:
+                    
+                    
+
             
-           form=Profile_form() 
-        except :pass    
+                    obj=userprofile.objects.filter(user_id=my).update(first_name=request.user,email=request.user.email,location=location,
+                         Phone_number=Phone_number,Year_of_birth=year_of_birth,Last_name=last_name,)
+                    return redirect('pref:prefer')    #
+                except Exception,e:
+                    error='Please enter a valid phone number'+ str(e)
+        
+        else: 
+      #return redirect('pref:prefer')  
+        
+    #else: 
+            try:
+               Instance=userprofile.objects.get(user_id=request.user.id).__dict__ 
+               form=Profile_form(initial=Instance)
+            except :pass    
     return render(request,template,locals())
     
     
@@ -136,7 +166,7 @@ def changePassword(request):
          phone=str(number.Phone_number)
          send=sendMessage(phone,msg)
          send.go()
-         return redirect('Sign_up:profile_editAll')
+         return redirect('/')
      else: pass
         
     except Exception,e:error="please enter the correct username" + str(e)

@@ -8,11 +8,12 @@
 
 
 
-<div style="width:100%;height:auto;bordrer:1px solid red;overflow:hidden;background-color:#eaeaea;padding:10px">
+<div style="width:100%;height:auto;bordrer:1px solid red;overflow:hidden;background-color:#eaeaea;padding:10px;">
+    <h3 style="text-align:center">Product details</h3>
     <div class="Product_img" style="margin-bottom:5px">
         <div style="width:100%;height:auto;border:1px solid gray;padding:10px;margin:auto;border-radius:5px;background-color:white">
         <a><img src="{{product.pic1.url}}" alt='img' style="display:block;width:90%;height:auto;border-bottom:2px solid gray;margin:auto;border-radius:5px" ></a>
-        <div style="background-color:pink;width:30%;height:auto;margin:auto;border-radius:5px"><p style="text-align:center">{{product.Product_name}}</p></div>
+        <div style="background-color:#eaeaea;width:30%;height:auto;margin:auto;border-radius:5px"><p style="text-align:center">{{product.Product_name}}</p></div>
         </div>
     </div>
 
@@ -27,28 +28,30 @@
    <h3 id=''>Seller Contacts</h3>
    Name &nbsp&nbsp &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp {{product.seller|capfirst}}</br>
    Location &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp&nbsp {{sellerprofile.location}}</br>
-   
+   <span style="background-color:green;color:white">Place an order and we will deiliver it to your room!</span></br></br>
+   <a href="{% url 'order:order' %}"><span style='font-weight:bold;background-color:red;color:white;border-radius:5px;padding:10px;font-size:12px;'>Order Now! </span></a></br></br>
+   <h3>Or call</h3>
 
-   <span id='d' style='dispelay:none'>Phone number &nbsp&nbsp&nbsp <a idd='d'   href="tel:{{sellerprofile.Phone_number}}">{{sellerprofile.Phone_number}}  <span style='font-weight:bold;background-color:red;color:white;border-radius:5px;padding:10px;font-size:12px;'>call now!</span></span> </a></br>
+   <span id='d' style='dispelay:none'>Phone number &nbsp&nbsp&nbsp </br></br> <a idd='d'   href="tel:{{sellerprofile.Phone_number}}"><span style='font-weight:bold;background-color:red;color:white;border-radius:5px;padding:10px;font-size:12px;'>click to call!</span></span> </a></br>
 
 
 
 
 <script>function levi1(){  document.getElementById('d').style.display='inline' ,document.form1.submit()}</script>
- <h3>Negotiations</h3>
+ <h3>Comments</h3>
  {% for i in h %}
       <span style="color:#1E90FF"> {{i|capfirst}}</span></br>
       <span styeele="background-color:gray;width:100%"> {{i.comment}}</span></br></br>
    {% endfor %}
 
 
-   <h3>Negotiate</h3>
+   
 
    <div class='upload mobile' style='margin:1px;float:left'>
        <form enctype="multipart/form-data" method="post" action='.' >
           {% if user.is_authenticated %}
             {% csrf_token %}
-              Write your negotiation
+              Write your comment
             {{form.comment}}
           {% else %}
             {{form.Name.label_tag}}</br>

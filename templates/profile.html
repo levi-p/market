@@ -16,10 +16,11 @@
         {% endif %}
         
         
-</div><div style='margin:2px;width:25%;backgrdound-color:#dcdcdc;border-bottom:2px solid white;font-weight:bold;padding:2px;float:left'>
+</div><div style='margin:2px;width:35%;backgrdound-color:#dcdcdc;border-bottom:2px solid white;font-weight:bold;padding:2px;float:left'>
   {{profile.first_name|capfirst}}</br>
    <a href="{% url 'Sign_up:profile_editAll' %}">edit profile</a></br>
-   <a href="{% url 'pref:prefer' %}">edit preferences</a>
+   <a href="{% url 'pref:prefer' %}">edit preferences</a></br>
+  <a href="{% url "uploadWay" %}"> upload a product</a>
    </div>
 	
  	
@@ -27,14 +28,27 @@
    <div style='width:100%;height:auto;bordder:2px solid gray;float:none;clear:both;text-decoration:none'></br></div>
    
    
-   <div style='margin:;width:100%;height:auto;background-color:#ededed;border-bottom:2px solid white;'>your products({{c|length}})</br>
-        
-	{% for i in c %}
+   <div style='margin:;width:100%;height:auto;background-color:#ededed;border-bottom:2px solid white;'>your products</br>
+       
+  
+       {% if preference %}
+        {% for i in productlist %}
+           
+	<div>
+	{% include 'common_c.html' %}
+	</div>
+	{% endfor %}
+     
+       {% else %}      
+
+
+	{% for i in products %}
 	<div>
 	{% include 'common_c.html' %}
 	</div>
 	{% endfor %}
 	
+        {% endif %}
    
    
    </div>

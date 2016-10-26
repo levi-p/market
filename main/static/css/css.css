@@ -23,9 +23,9 @@ body > #container { height: auto; min-height: 100%; }
 #latem{height:50%}
 .upload{width:25%;height:auto;margin:auto;borgder:2px solid red}
 
-.Product_img{width:30%;height:auto;float:left;borrder:2px solid green;}
+.Product_img{width:40%;height:auto;float:none;margin:auto;borgder:2px solid green;}
 
-.productdiv{width:70%;height:auto;border:1px solid gray;float:right;background-color:white;font-weigrht:bold;border-radius:5px;overflow:;padding:10px}
+.productdiv{width:40%;height:auto;border:1px solid gray;float:none;background-color:white;font-weigrht:bold;border-radius:5px;overflow:;padding:10px;margin:auto}
 
 .containbody{width:65%;height:auto;margin:auto;}
 .secondnav{width:100%;height:auto;margin:auto;border-radius:5px;background-color:#191930;#c9c9c9;margin-bottom:10px;color:;padding:px}

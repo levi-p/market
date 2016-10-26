@@ -17,12 +17,12 @@ class Sign_up(models.Model):
 class userprofile(models.Model):
     first_name = models.ForeignKey(User,related_name='name1',blank=True ,null=True)
     Last_name = models.CharField(max_length=30,null=True,blank=True)
-    Year_of_birth = models.CharField(max_length=30,blank=True,null=True)
+    Year_of_birth = models.CharField(max_length=30,null=True)
     user_id = models.IntegerField(blank=True)
     email = models.EmailField(blank=True,null=True,default="youremail@email.com")
-    location = models.CharField(max_length=30, default='')
+    location = models.CharField(max_length=30, default='',blank=True)
     profile_pic = models.ImageField(blank=True)
-    Phone_number = models.CharField(max_length=12, default='000 000 000')
+    Phone_number = models.CharField(max_length=12, default='000 000 000',blank=True)
 
     def __str__(self):
         return str(self.first_name)

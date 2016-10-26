@@ -26,9 +26,13 @@ class Profile_form(forms.ModelForm):
         widgets={'Year_of_birth':forms.TextInput(attrs={'style':'width:22%;color:;borhder:1px solid gray;','value':'e.g 1990','onfocus':"if (this.value=='e.g 1990') this.value='';"}),
                 'Last_name':forms.TextInput(attrs={'style':'width:100%;','value':'','onfocus':"if (this.value=='e.g 1990') this.value='';"}),
                 'email':forms.TextInput(attrs={'style':'width:100%;color:;','onfocus':"if (this.value=='e.g 1990') this.value='';"}),
-                'location':forms.TextInput(attrs={'style':'width:100%;color:;','value':'','onfocus':"if (this.value=='e.g 1990') this.value='';"}),
-                'Phone_number':forms.TextInput(attrs={'style':'width:100%;color:;','value':'','onfocus':"if (this.value=='e.g 1990') this.value='';"}),
+                'location':forms.TextInput(attrs={'style':'width:100%;color:gray;','value':'Optional','onfocus':"if (this.value=='Optional') this.value='';"}),
+                'Phone_number':forms.TextInput(attrs={'style':'width:100%;color:gray;','value':'Optional','onfocus':"if (this.value=='Optional') this.value='';"}),
                  }
 
 class ChangePasswordForm(forms.Form):
     user_name=forms.CharField()
+
+class Profile_form2(forms.Form):
+    Phone_number=forms.CharField()
+    location=forms.CharField()

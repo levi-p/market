@@ -11,5 +11,8 @@ class Preference(models.Model):
     use_r=models.ForeignKey(userprofile,null=True)
     I_like=models.CharField(max_length=70,null=True,blank=True)#,choices=Choices)
 
+    def __str__(self):
+        return str(self.use_r)
+
 
 
