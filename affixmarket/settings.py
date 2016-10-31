@@ -46,7 +46,9 @@ INSTALLED_APPS = [
     'main',
     'register',
     'UserPreference',
-    'orders'
+    'orders',
+    'allPeople',
+    'music',
 ]
 
 MIDDLEWARE_CLASSES = [

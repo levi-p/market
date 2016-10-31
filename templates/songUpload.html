@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class='upload mobile'>
+{% if success %}
+<div style='width:100%;text-align:center'>{{success}} or go <a href="{% url 'music:music' %}"> back</a></div>
+{% endif %}
+
+<form method='post' action='.' enctype="multipart/form-data">
+{% csrf_token %}
+{{form.Artist.label_tag}}</br>
+{{form.Artist}}</br>
+
+{{form.Title.label_tag}}</br>
+{{form.Title}}</br>
+{{form.Song.label_tag}}</br>
+{{form.Song}}
+
+
+<input type='submit'  style='font-weight:bold;width:96px;background-color:green;border:2px solid green;color:white;height:40px;border-radius:5px' value="upload!" />
+</form>
+</div>
+{% endblock %}

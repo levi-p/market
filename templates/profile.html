@@ -16,19 +16,20 @@
         {% endif %}
         
         
-</div><div style='margin:2px;width:35%;backgrdound-color:#dcdcdc;border-bottom:2px solid white;font-weight:bold;padding:2px;float:left'>
+</div><div style='margin:2px;width:35%;backgrdound-color:#dcdcdc;border-bottom:2px solid white;padding:2px;float:left'>
   {{profile.first_name|capfirst}}</br>
-   <a href="{% url 'Sign_up:profile_editAll' %}">edit profile</a></br>
-   <a href="{% url 'pref:prefer' %}">edit preferences</a></br>
-  <a href="{% url "uploadWay" %}"> upload a product</a>
-   </div>
+   <a style="font-weight:bold;" href="{% url 'Sign_up:profile_editAll' %}">edit profile</a></br>
+   <a style="font-weight:bold;" href="{% url 'pref:prefer' %}">edit preferences</a></br>
+  <a style="font-weight:bold;" href="{% url "uploadWay" %}"> upload a product</a></br>
+    </div>
 	
  	
 
    <div style='width:100%;height:auto;bordder:2px solid gray;float:none;clear:both;text-decoration:none'></br></div>
    
    
-   <div style='margin:;width:100%;height:auto;background-color:#ededed;border-bottom:2px solid white;'>your products</br>
+   <div style='margin:;width:100%;height:auto;background-color:#ededed;border-bottom:2px solid white;'>following<span style="font-weight:bold;color:yellow;background-color:black">+53</span> followers
+<span style="color:yellow;font-weight:bold;background-color:black">+107</span></br>
        
   
        {% if preference %}

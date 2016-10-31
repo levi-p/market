@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<div class="people mobile" style="">
+<h3 style="text-align:center">People on site</h3>
+<img src="{% static 'network.jpg' %}" style="width:100%;height:auto;margin:auto" /></br></br>
+
+{% for i in allP %}
+<div style="width:100%;height:auto;border-bottom:5px solid grey;float:left;padding:5px;">
+{% if i.profilePic %}
+
+<img src="i.profilePic.url" style="float:left;width:10%;height:auto;margin-right:2px" />
+
+
+{% else %}
+
+<img src="{% static 'placeholders/profile.png' %}" style="float:left;width:10%;height:auto;margin-right:2px" alt="gg" />
+
+
+{% endif %}
+{{i.first_name|capfirst}}</br>
+<a href='#'> view profile</br></a>
+<a href="{% url 'anthu:msg' request.user.id i.id %} ">send message</a>
+
+
+</div></br>
+{% endfor %}
+</div>
+
+{% endblock %}

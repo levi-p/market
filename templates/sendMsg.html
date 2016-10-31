@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form method="post" action="{% url 'anthu:msg' request.user.id toSend %}">
+{% csrf_token %}
+{{form}}
+{{tohp}}fff
+<input type="submit" value="Send" />
+</form>
+
+{% endblock %}

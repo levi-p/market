@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<div class="prof mobile" style="">
+
+
+<div style="width:25%;height:auto;borderr:1px solid red;overflow:auto;background-color:#eaeaea;float:left">
+        {% if profile.profile_pic %}
+        
+        <a><img src="{{profile.profile_pic.url}}" alt='img' style="display:block;width:100%;height:25%;border:1px solid gray;margin:;border-radius:5px" ></a>
+        {% else %}
+        <a><img src="{% static 'placeholders/profile.png' %}" alt='img' style="display:block;width:100%;height:auto;20%;border:1px solid gray;margin:;border-radius:5px" ></a>
+        {% endif %}
+        
+        
+</div><div style='margin:2px;width:35%;backgrdound-color:#dcdcdc;border-bottom:2px solid white;padding:2px;float:left'>
+  {{profile.first_name|capfirst}}</br>
+   
+   following<span style="font-weight:bold;color:yellow;background-color:black"> &nsbp +53</span></br> 
+   followers
+<span style="color:yellow;font-weight:bold;background-color:black">+107</span></br>
+ 
+    </div>
+	
+ 	
+
+   <div style='width:100%;height:auto;bordder:2px solid gray;float:none;clear:both;text-decoration:none'></br></div>
+   
+   
+   <div style='margin:;width:100%;height:auto;background-color:#ededed;border-bottom:2px solid white;'>
++follow | message |
+       
+  
+       {% if preference %}
+        {% for i in productlist %}
+           
+	<div>
+	{% include 'common_c.html' %}
+	</div>
+	{% endfor %}
+     
+       {% else %}      
+
+
+	{% for i in products %}
+	<div>
+	{% include 'common_c.html' %}
+	</div>
+	{% endfor %}
+	
+        {% endif %}
+   
+   
+   </div>
+   
+   </div>
+
+
+
+
+
+
+
+
+{% endblock %}

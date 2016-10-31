@@ -64,24 +64,21 @@
         <nav class="navbar-inverse" style="background-color: #191930;border-coflor: #080808;margin-bottom:10px" role="navigation">
        
                   <div class="navbar-header">
-	<div><span id="dd3" style="clear:none;float:right"><a style="color:white" href="{% url 'Sign_up:profile' %} ">Profile</a></span></div>
+	
       
 
       		
-              <div id="affmg" stsyle="position:relative;top:-50px;float:left;height:200px;width:70%;margind:5px;"><a href="/"><img src="{% static 'Affix2.png' %}" style="" id="logo" alt="gg"></a></div>
-
+              <div id="affmg" stsyle="position:relative;top:-50px;float:left;height:200px;width:70%;margind:5px;"><a href="{% url 'home' %}"><img src="{% static 'Affix2.png' %}" style="" id="logo" alt="gg"></a></div>
+                   
                         </div>
 
                 <div class="collapse navbar-collapse" id="myNavbar">
-   <ul clasds="nav navbar-nav" style="padding-left:0;">
-<li><div id="affmg2" styele="background-color:red;"><img src="{% static 'Affix2.png' %}" stylhe="" id="logo" alt="gg">
-</div></li>
-    <span id="dd" style=""><a href="/"><li class='ll' style="color:white">Home</li></a></span>
-    {% for i in cat %}
-    <span id="dd" style=""><a href="{{i.get_absolute_url}}"><li class='ll' style="color:white">{{i}}</li></a></span>
-    {% endfor %}
+   
+
+    
+    
    <!--{% if user.is_authenticated %}
-    <span id="dd2" style=""><a href="{% url "logout" %}?next=/"><li class='ll' style="color:white">logout </li></a></span>
+    
    {% else %}
    <span id="dd2" style="color:white"><li style="color:white"><a class='ll' style="color:white" href="{% url "login" %}">login</a>/<a  href="{% url "Sign_up:Sign_up" %}">sign up</a></li></span>
    {% endif %}-->
@@ -89,14 +86,29 @@
 
    </ul>
   
-                       </div>
+                      </div>
+<div>
+<span id="dd" ><a href="/" style="font-weight:bold;color:white">Home |</a></span>
+<span id="dd" style=""><a style="color:white" href="{% url 'Sign_up:profile' %} ">Profile|</a></span>
+<span id="dd" ><a href="{% url 'music:music' %}" style="font-weight:bold;color:white">Download free music |</a></span>
+{% if user.is_authenticated %}
+
+
+
+
+    <span id="dd" style="float:right"><a href="{% url "logout" %}?next=/"><li class='ll' style="color:white">logout </li></a></span>
+
+   {% else %}
+   <span id="dd"  style="float:right;color:white;border-right:none"><a style="color:white" href="{% url "Sign_up:log" %}">login /</a><a style="color:white" href="{% url "Sign_up:Sign_up" %}"> sign up</a></span>
+   {% endif %}
+</div>
 
                  
 
 
 
 </nav>
-<div style="width:100%;float:left;text-align:right"><a href="/"><span style="margin-right:20px;font-weight:bold;color:white">Hpome</a></span></br></div>
+<div style="width:100%;float:left;text-align:right"></br></div>
 
 {% block content %}
 
@@ -152,12 +164,12 @@
 
 
 
-    <a style="color:white" href="{% url "uploadWay" %}">{{request.user|capfirst}} Upload a product!</a>
+    <a style="color:white" href="{% url "uploadWay" %}">{{request.user|capfirst}} Upload a product! |</a>
 
     <span idw="dd" style="font-size:14px;dispelay:inline;flogat:right"><a style='color:white' href="{% url 'main:notify' %}">Notifications<span style='color:red;font-weight:bold;background-color:white'>({{comment_list|length}})</span></a></span>
 
    {% else %}
-   <span id="dd" style="color:white;border-right:none"><a style="color:white" href="{% url "Sign_up:log" %}">login /</a><a style="color:white" href="{% url "Sign_up:Sign_up" %}"> sign up</a> to upload a product</span>
+   <span id="dd" style="color:white;border-right:none"><a style="color:white" href="{% url "Sign_up:Sign_up" %}">upload a product</span>
    {% endif %}
 
 
@@ -232,7 +244,7 @@
                 <div class="container">
                     <p cladss="pull-right">
                     Contact:    affixmw@gmail.com</br></p>
-                    <p>    &copy; A Levi Mwase production 2016
+                    <p>    &copy; A Levi Mwase 2016 production 
                     </p>
                 </div>
             </footer>

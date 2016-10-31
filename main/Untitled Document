@@ -1,0 +1,9 @@
+def one():
+...     for i in users:
+...         try:
+...             phone=str(i.Phone_number)...             message= str(i.first_name) + " " + "long time since you visited affixmw,edit your profile to get relevant updates. Click now! www.affixmw.com/sign_up/profile_editAll/ "
+...             msg=message
+...             send1=sendMessage(phone,msg)
+...             send1.go()
+...         except Exception,e:print str(e)
+

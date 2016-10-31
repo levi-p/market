@@ -5,6 +5,7 @@ from django import forms
 from .forms import ProductUploadForm,ProductCommentForm,Noti
 from .t import sendMessage
 from UserPreference.models import Preference
+from django.http import HttpResponse
 
 # Create your views here.
 
@@ -50,10 +51,18 @@ def ProductView(request,Pk):
             form=ProductCommentForm()
         #reset all reads to include only poster
         Comment.objects.filter(products=product.id).update(read=str(request.user))
+
+        
+
     
     return render(request,'product_details.html',locals())
     
     
+def response12(request):
+    d=Product.objects.get(id=27)
+    response = HttpResponse(d.pic1, content_type='text/plain')
+    response['Content-Disposition'] = 'attachment; filename=%s' % 'filename'
+    return response
     
 def ProductUpload(request,Pk):
    
