@@ -27,10 +27,13 @@ def sendMessage(request,From,to):
         
     return render(request,'sendMsg.html',locals())
 
-def followSomeOne(request):
-    followerS=Followers.objects.filter(id=userToFollowId)
-    if request.user not in followerS.followers:
-        followerS.update(followers)
+def followSomeOne(request,userToFollowId):
+    follow=Followers.objects.filter(id=userToFollowId)
+    
+    if request.user not in follow.followers:
+        add=str(follow.followers) + str(request.user)
+        fobj=followerS.update(followers=add)
+        fobj.save()
 
     return redirect('anthu:allPeople')
 
