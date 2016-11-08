@@ -21,8 +21,8 @@
 
 {% endif %}
 {{i.first_name|capfirst}}</br>
-<a href='#'> view profile</br></a>
-<a href="{% url 'anthu:msg' request.user.id i.id %} ">send message</a>
+<a href="{% url 'anthu:ona' i.id %}"> view profile</br></a>
+{% comment %}<a href="{% url 'anthu:msg' request.user.id i.id %} ">send message</a>{% endcomment %}
 
 
 </div></br>

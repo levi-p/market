@@ -20,6 +20,7 @@ def categoryView(request,name_id):
     sub=SubCategory.objects.filter(category_name__id=name_id)
     products=Product.objects.filter(sub_c__category_name__id=name_id)
     
+    
     return render(request,'product_category.html',locals())
     
 def subCategoryView(request,sub_id):

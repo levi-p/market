@@ -22,6 +22,9 @@ class Message(models.Model):
 class Followers(models.Model):
     userToFollow = models.ForeignKey(User)
     followers = models.CharField(max_length=500)
+    
+    def __str__(self):
+        return "%s is followed by" %self.userToFollow
 
 class Following(models.Model):
     me = models.ForeignKey(User)

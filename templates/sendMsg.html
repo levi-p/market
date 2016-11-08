@@ -1,11 +1,36 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<div style="background-color:#d7d7d7">
+<div class='upload mobile' dstyle="background-color:;width:50%;margin:auto">
+
+{% for i in messagesAll|dictsort:'date' %}
+
+{% if i.From.first_name == request.user %}
+<div style="background-color:white;border:1px solid grey;width:45%;float:right;clear:both;border-radius:5px">
+<span style="color:#009dbf;font-weight:bold">you</span></br>
+{{i.message}}</br>
+</div></br>
+
+{% else %}
+
+<div style="background-color:#c7ecc9;border:1px solid grey;width:45%;clear:both;border-radius:5px">
+<span style="color:#009dbf;font-weight:bold">{{i.From}}</span></br>
+{{i.message}}</br>
+</div></br>
+
+{% endif %}
+
+{% endfor %}
+<div style="clear:both">
 <form method="post" action="{% url 'anthu:msg' request.user.id toSend %}">
 {% csrf_token %}
-{{form}}
-{{tohp}}fff
+{{form.message.label_tag}}</br>
+{{form.message}}</br>
+
+
 <input type="submit" value="Send" />
 </form>
-
+</div>
+</div>
 {% endblock %}

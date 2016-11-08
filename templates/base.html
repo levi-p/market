@@ -90,7 +90,8 @@
 <div>
 <span id="dd" ><a href="/" style="font-weight:bold;color:white">Home |</a></span>
 <span id="dd" style=""><a style="color:white" href="{% url 'Sign_up:profile' %} ">Profile|</a></span>
-<span id="dd" ><a href="{% url 'music:music' %}" style="font-weight:bold;color:white">Download free music |</a></span>
+<span id="dd" ><a href="{% url 'music:music' %}" style="font-weight:bold;color:white">Free music |</a></span>
+<span id="dd" ><a href="{% url 'anthu:allPeople' %}" style="font-weight:bold;color:white">Find People |</a></span>
 {% if user.is_authenticated %}
 
 
@@ -187,7 +188,7 @@
 
 
 {% for i in cat|dictsort:'Name' %}
-<div style='width:100%;height:auto;background-color:#800000;color:orange;border-bottom:1px solid black ;margin-bottom:2px;tefxt-align:center;font-weight:bold;padding:3px;font-size:20px'>
+<div style='width:100%;height:auto;background-color:#800000;color:orange;border:1px solid black ;margin-right:2px;tefxt-align:center;font-weight:bold;padding:2px;font-size:20px;margin:2px'>
 
 <a style='color:orange;' href="{{i.get_absolute_url}}">{{i}}</a>
 
@@ -221,7 +222,7 @@
 
 
 <div class='recoproduct' id='latem' style="margin-top:10px;padding:px"></br><p><span style='font-weight:bold;background-color:#1E90FF;color:white;border-radius:5px;padding:10px;font-size:12px;position:relative;tofp:;margin-top:10px'>new! k{{i.Price}}</span></p>
-<img class='recoimg' src="{{i.pic1.url}}" style=""  alt="gg">
+<img class='recoimg' shjhtyle="border:1px solid grey" src="{{i.pic1.url}}" style=""  alt="gg">
 
 </div></a>
 {% endfor %}
