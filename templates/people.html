@@ -4,11 +4,11 @@
 
 
 <div class="people mobile" style="">
-<h3 style="text-align:center">People on site</h3>
-<img src="{% static 'network.jpg' %}" style="width:100%;height:auto;margin:auto" /></br></br>
+
+<img src="{% static '2.png' %}" style="display:block;float:none;width:20%;height:auto;margin:auto;overflow:hidden;f" /></br></br>
 
 {% for i in allP %}
-<div style="width:100%;height:auto;border-bottom:5px solid grey;float:left;padding:5px;">
+<div style="width:100%;height:auto;border:5px solid #d9d9d9;float:left;padding:5px;">
 {% if i.profilePic %}
 
 <img src="i.profilePic.url" style="float:left;width:10%;height:auto;margin-right:2px" />
@@ -20,7 +20,7 @@
 
 
 {% endif %}
-{{i.first_name|capfirst}}</br>
+<span style="font-weight:bold">{{i.first_name|capfirst}}</span></br>
 <a href="{% url 'anthu:ona' i.id %}"> view profile</br></a>
 {% comment %}<a href="{% url 'anthu:msg' request.user.id i.id %} ">send message</a>{% endcomment %}
 
