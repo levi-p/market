@@ -23,6 +23,9 @@ class userprofile(models.Model):
     location = models.CharField(max_length=30, default='',blank=True)
     profile_pic = models.ImageField(blank=True)
     Phone_number = models.CharField(max_length=12, default='000 000 000',blank=True)
+    choices = [('1','true'),('2','false'),]
+    active = models.CharField(max_length=5,choices = choices, null=True)
+
 
     def __str__(self):
         return str(self.first_name)

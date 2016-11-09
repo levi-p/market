@@ -14,6 +14,7 @@ def peopleOnSite(request):
 @login_required(redirect_field_name='login',login_url="Sign_up:log")
 def sendMessage(request,From,to):
     toSend=to
+    
     if request.method=='POST':
         form = sendMessageForm(request.POST)
         if form.is_valid():
@@ -21,7 +22,7 @@ def sendMessage(request,From,to):
             To2 = userprofile.objects.get(id=to)
             Message2 = form.cleaned_data['message']
             
-            msg = Message(From=From2,To=To2,message=Message2)
+            msg = Message(From=From2,To=To2,message=Message2,readBy=str(request.user.id))
             msg.save()
     else: form = sendMessageForm()
     message1 = Message.objects.filter(From__first_name__id=From).filter(To__id=to)
@@ -31,6 +32,12 @@ def sendMessage(request,From,to):
     messages2 = [i for i in message2 ]
     messagesAll = messages1 + messages2
     
+    try:
+        read =max([x.id for x in Message.objects.all()])
+        updateRead = Message.objects.filter(id=read)
+        sender =[x.readBy for x in  updateRead]
+        updateRead.update(readBy=str(request.user.id)+str(sender))
+    except: pass
         
     return render(request,'sendMsg.html',locals())
 

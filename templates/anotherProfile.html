@@ -33,7 +33,8 @@
    <div style='margin:;width:100%;height:auto;background-color:#ededed;border-bottom:2px solid white;'>
 {% if current in followinTrue %}You are following {{profile.first_name|capfirst}}
 {% else %}
-<a href="{% url 'anthu:follow' profile.first_name.id %}" >+follow </a>{% endif %} | message |
+<a href="{% url 'anthu:follow' profile.first_name.id %}" >+follow </a>{% endif %} | 
+<a href="{% url 'anthu:msg' request.user.id profile.id %} ">message |</a>
        
   
        {% if preference %}
