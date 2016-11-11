@@ -16,9 +16,11 @@ def conte(request):
 #find a way to check if either the to or the from doesnt raise an exception
 
     try:
-        message_list = [x for x in str(Message.objects.filter(From__first_name__id=str(request.user.id)))+str(Message.objects.all(To__first_name__id=str(request.user.id))) if str(request.user.id) not in x.readBy ]
+        message_list1 = [x for x in Message.objects.filter(From__first_name__id=str(request.user.id)) if str(request.user.id) not in x.readBy ]
+        message_list2= [x for x in Message.objects.filter(To__first_name__id=str(request.user.id)) if str(request.user.id) not in x.readBy ]
+        message_list = message_list1 + message_list2
     except:
-        try:message_list = [x for x in str(Message.objects.filter(From__first_name__id=str(request.user.id))) if str(request.user.id) not in x.readBy ]
-        except:message_list = [x for x in str(Message.objects.filter(To__first_name__id=str(request.user.id))) if str(request.user.id) not in x.readBy ]
+        try:message_list = [x for x in Message.objects.filter(From__first_name__id=str(request.user.id)) if str(request.user.id) not in x.readBy ]
+        except:message_list =[]# [x for x in Message.objects.filter(To__first_name__id=str(request.user.id)) if str(request.user.id) not in x.readBy ]
 
     return {'cat':cat,'c':c,'d':d,'comment_list':comment_list,'message_list':message_list}

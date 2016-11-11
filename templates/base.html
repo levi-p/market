@@ -167,8 +167,9 @@
 
     <a style="color:white" href="{% url "uploadWay" %}">{{request.user|capfirst}} sell a product! |</a>
 
-    <span idw="dd" style="font-size:12px;dispelay:inline;flogat:right"><a style='color:white' href="{% url 'main:notify' %}">Notifications<span style='color:red;font-weight:bold;background-color:white'>({{comment_list|length}})</span></a>
-<a style='color:white' href="{% url 'main:notify' %}">| msg<span style='color:red;font-weight:bold;background-color:white'>({{comment_list|length}})</span></a>
+    <span idw="dd" style="font-size:12px;dispelay:inline;flogat:right"><a style='color:white' href="{% url 'main:notify' %}">Notifications<span style='color:yellow;font-weight:bold;background-color:'>({{comment_list|length}})</span></a>
+<a style='color:white' href="{% url 'main:notify' %}">| msg<span style='color:yellow;font-weight:bold;background-color:'>({{message_list|length}})</span></a>
+
 </span>
 
 

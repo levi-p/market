@@ -29,7 +29,7 @@
    Name &nbsp&nbsp &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp {{product.seller|capfirst}}</br>
    Location &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp&nbsp {{sellerprofile.location}}</br>
    <span style="background-color:green;color:white">Place an order and we will deiliver it to your room!</span></br></br>
-   <a href="{% url 'order:order' %}"><span style='font-weight:bold;background-color:red;color:white;border-radius:5px;padding:10px;font-size:12px;'>Order Now! </span></a></br></br>
+   <a href="{% url 'order:order' 'prdoduct.Product_name' %}"><span style='font-weight:bold;background-color:red;color:white;border-radius:5px;padding:10px;font-size:12px;'>Order Now! </span></a></br></br>
    <h3>Or call</h3>
    {{response}}
 

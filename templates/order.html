@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class='upload mobile' style='background-color:;height:100%'>
-<form enctype="multipart/form-data" method="post" action="{% url 'order:order' %}" >
+<form enctype="multipart/form-data" method="post" action="{% url 'order:order' pd %}" >
 {% csrf_token %}
 
 

@@ -10,6 +10,7 @@ class order(models.Model):
     phoneNumber=models.CharField(max_length=30)
     email=models.CharField(max_length=30)
     time=models.DateField(default=timezone.now,blank=True)
+    product_name = models.CharField(max_length=30,null=True)
 
     def __str__(self):
         return self.Name
