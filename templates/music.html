@@ -9,8 +9,8 @@
 <img src="{% static 'music1.png' %}" style="float:none;display:block;width:50%;height:auto;margin:auto;bordrer: 2px solid red" /></br>
 <div class='search' style="width:55%;margin:auto;borrder: 2px solid red" >
 <form  action="{% url 'music:search' %}" method="GET">
-<input type='text' name='q' />
-<input type='submit' value="search" style="background-color:orange;border: 4px solid orange;border-radius: 5px">
+<input type='text' style="width:175px" name='q' />
+<input type='submit' value="search" style="background-color:orange;border: 4px solid orange;border-radius: 5px;color:white">
 </div>
 
 <a href={% url 'music:upload' %}><div class='uploadMusic' style="color:white;font-weight:bold;text-align:center;background-color:orange;float:none;display:block;width:55%;height:auto;margin:auto;border: 2px solid orange;border-radius:5px">
@@ -23,7 +23,7 @@ Panga upload nyimbo
 </div>
 
 {% for i in songList %}
-<div style="width:100%;height:auto;border-bottom:5px solid grey;float:left;padding:5px;">
+<div style="width:100%;height:auto;border-bottom:5px solid #e6e6e6;float:left;padding:5px;">
 <a href="{% url 'music:Download' i.id %}" style="font-weight:bold;font-size:20px;color:grey">{{i.Artist|capfirst}}</br>
 <a href="{% url 'music:Download' i.id %}" style="font-weight:bold;font-size:16px">{{i.Title}}.mp3
 <span style='float:right;'>Download</span></a>

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="upload mobile" style="min-height:500px">
+
+{% for i in P_list %}
+
+<div style="width:100%;height:auto;">
+
+<a href="{{i.get_absolute_url }}">{{i.Title}}</a></br>
+
+{{i.time}}</br>
+
+</div>
+{% endfor %}
+</div>
+
+
+{% endblock %}

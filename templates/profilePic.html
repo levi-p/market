@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<div class='upload mobile' style=''>
+<form enctype="multipart/form-data" method="post" action='.' >
+{% csrf_token %}
+
+
+
+
+
+
+<input type="submit" style='width:96px;background-color:green;border:2px solid green;color:white;height:40px;border-radius:5px' value="upload!" />
+</form>
+</div>
+
+{% endblock %}
+
+

@@ -3,6 +3,9 @@ from main.models import Product,Category,Comment,SubCategory
 
 from main.context_p import conte
 
+def success(request):
+    return render(request,'success.html',locals())
+
 def call(request):
     categories=Category.objects.all()
     subcategories=SubCategory.objects.all()

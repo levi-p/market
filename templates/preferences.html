@@ -1,17 +1,47 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<style> form > li{color:black} </style>
+<style> .values{background-color:white;border:1px solid #e3e3e3}</style>
 {{error}}
-<div class='' style=''>
+<div class='' style='background-color:#e3e3e3;min-height:100%'>
 <form enctype="multipart/form-data" method="post" action="{% url 'pref:prefer' %}" >
-
+<div style="text-align:center">you are are interested in</div>
 <div class='f'>
 {% csrf_token %}
-{{form.as_p}}
+{% for i in form %}
+<div class="values" style="">
+
+{{i.1}}
 </div>
 
-<input type="submit" style='width:96px;background-color:green;border:2px solid green;color:white;height:40px;border-radius:5px' value="upload!" />
+<div class="values" style="">
+
+{{i.2}}
+</div>
+
+<div class="values" style="">
+
+{{i.3}}
+</div>
+
+<div class="values" style="">
+
+{{i.4}}
+</div>
+
+<div class="values" style="">
+
+{{i.5}}
+</div>
+
+
+{% endfor %}
+
+</div>
+
+
+
+<input type="submit" style='width:96px;background-color:green;border:2px solid green;color:white;height:40px;border-radius:5px' value="save!" />
 </form>
 </div>
 

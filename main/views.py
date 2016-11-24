@@ -18,6 +18,8 @@ def ProductView(request,Pk):
     sellerprofile=userprofile.objects.get(first_name=product.seller)
     product.views+=1
     product.save()
+    name=Pk
+    #name=[x for x in str(name1)]
     
     #add user ro have read list
     h=Comment.objects.filter(products=product)
@@ -90,6 +92,7 @@ def ProductUpload(request,Pk):
         #try:
         if 1==1:
             for i in all_pref :
+              try:
                 if str(P_d.sub_c.category_name) in i.I_like:
                     phone=i.use_r.Phone_number
                     msg="Hie"+" " + (str(i.use_r).capitalize() + " " + "there are new products in" +" " +
@@ -97,6 +100,7 @@ def ProductUpload(request,Pk):
                     send=sendMessage(phone,msg)
                     send.go()
                     print str(P_d.sub_c.category_name) + " " + str(i.I_like)
+              except: pass 
         #except:
          #   error='error occured'
 

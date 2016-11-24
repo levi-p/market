@@ -1,0 +1,19 @@
+<!Doctype html>
+{% extends 'base.html' %}
+
+{% block content %}
+<html>
+<body>
+<div class="upload mobile" id="article_id" style="min-height:300px">
+<form method="post" action=".">
+  {% csrf_token %}
+  {{form}}
+  <input type = "submit" value='write' />
+
+</form>
+</div>
+
+</body>
+</html>
+
+{% endblock %}

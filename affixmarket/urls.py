@@ -16,11 +16,13 @@ Including another URLconf
 from django.conf.urls import url,include
 from django.contrib import admin
 import views
+from django.conf.urls.static import static
 from django.contrib.auth import views as auth_views
 from django.views.static import serve
 from django.conf import settings
 
 urlpatterns = [
+    url(r'^success/',views.success,name="success"),
     url(r'^music/',include('music.urls', namespace='music')),
     url(r'order/',include('orders.urls' ,namespace='order')),
     url(r'^uploadWay', views.call,name='uploadWay'),
@@ -31,10 +33,11 @@ urlpatterns = [
     url('^', include('django.contrib.auth.urls')),
     url(r'^preference/', include('UserPreference.urls',namespace='pref')),
     url(r'^$',views.home,name="home"),
+    url(r'^blog/',include('articles.urls',namespace='art')),
     
     url(r'^admin/', admin.site.urls),
     url(r'^people/', include('allPeople.urls',namespace='anthu')),
-]
+] + static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)
 
 if settings.DEBUG:
     # static files (images, css, javascript, etc.)

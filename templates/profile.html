@@ -6,30 +6,46 @@
 
 <div class="prof mobile" style="">
 
-
-<div style="width:25%;height:auto;borderr:1px solid red;overflow:auto;background-color:#eaeaea;float:left">
-        {% if profile.profile_pic %}
+ <div style="width:100%;height:auto;bokrder:1px solid red;overflow:auto;background-color:#cde2e7;#eaeaea;float:none;padding:10px">
+  <div style="width:25%;height:auto;borderr:1px solid red;overflow:auto;background-color:#eaeaea;float:left">
+        {% if profile.picToShow %}
         
-        <a><img src="{{profile.profile_pic.url}}" alt='img' style="display:block;width:100%;height:25%;border:1px solid gray;margin:;border-radius:5px" ></a>
+        <a><img class="profilePic" src="{{profile.picToShow.url}}" alt='img' style="" ></a>
         {% else %}
         <a><img src="{% static 'placeholders/profile.png' %}" alt='img' style="display:block;width:100%;height:auto;20%;border:1px solid gray;margin:;border-radius:5px" ></a>
         {% endif %}
+ 
         
         
-</div><div style='margin:2px;width:35%;backgrdound-color:#dcdcdc;border-bottom:2px solid white;padding:2px;float:left'>
-  {{profile.first_name|capfirst}}</br>
-   <a style="font-weight:bold;" href="{% url 'Sign_up:profile_editAll' %}">edit profile</a></br>
-   <a style="font-weight:bold;" href="{% url 'pref:prefer' %}">edit preferences</a></br>
-  <a style="font-weight:bold;" href="{% url "uploadWay" %}"> upload a product</a></br>
-    </div>
+  </div>
+
+
+  <div style="width:40%;color:#6c8287;padding:5px;margin:2px;border:1px solid none;float:left">
+    {{profile.first_name|capfirst}}</br>Write a description about yourself here
+  </div>
+
+   <!-- line break to seperate dvs -->
+   <div style='width:100%;height:auto;bordder:2px solid gray;float:none;clear:both;text-decoration:none'></br></div>
+
+  <div style='margin:2px;width:100%;background-color:white;border-bottom:2px solid none;padding:2px;float:none;clear:both'>
+    
+     <a style="fonft-weight:bold;color:#005e72" href="{% url 'Sign_up:profile_editAll' %}">edit profile| </a>
+     <a style="fofnt-weight:bold;color:#005e72" href="{% url 'pref:prefer' %}">edit preferences| </a>
+    <a style="fonft-weight:bold;color:#005e72" href="{% url "uploadWay" %}"> upload a product| </a>
+    <a style="fonft-weight:bold;color:#005e72" href="{% url "art:write" %}"> write an article| </a>
+    <a style="fonft-weight:bold;color:#005e72" href="{% url "art:list" %}"> my blog post| </a>
+  </div>
+ </div>
 	
  	
-
-   <div style='width:100%;height:auto;bordder:2px solid gray;float:none;clear:both;text-decoration:none'></br></div>
+   <!-- line break to seperate dvs -->
+   <div style='width:100%;height:auto;bordder:2px solid gray;float:none;clear:both;text-decoration:none;'></br></div>
    
    
-   <div style='margin:;width:100%;height:auto;background-color:#ededed;border-bottom:2px solid white;'>following<span style="font-weight:bold;color:yellow;background-color:black">+53</span> followers
-<span style="color:yellow;font-weight:bold;background-color:black">+107</span></br>
+   <div style='margin:;width:100%;height:auto;background-color:#ededed;border-bottom:2px solid white;min-height:300px'>
+    following<span style="font-weight:bold;color:yellow;background-color:black">
+   +53    </span>| follower    
+   <span style="color:yellow;font-weight:bold;background-color:black">+107 </span>| </br>
        
   
        {% if preference %}

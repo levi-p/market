@@ -3,6 +3,7 @@ from .models import music
 from .forms import musicUploadForm
 from django.http import HttpResponse
 from django.db.models import Q
+import os
 
 # Create your views here.
 
@@ -31,6 +32,7 @@ def songDownload(request,songId):
     filename = str(d.Song).strip('./')
     
     response = HttpResponse(d.Song, content_type='text/plain')
+    response['Content-Length']=os.path.getsize(d.Song.path)
     response['Content-Disposition'] = 'attachment; filename=%s' % filename 
     return response
 

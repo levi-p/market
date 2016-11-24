@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'orders',
     'allPeople',
     'music',
+    'articles',
 ]
 
 MIDDLEWARE_CLASSES = [

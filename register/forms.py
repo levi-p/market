@@ -21,7 +21,7 @@ class Profile_form(forms.ModelForm):
 
 
         model=userprofile
-        exclude=('first_name','profile_pic','user_id')
+        exclude=('first_name','user_id','active','picToShow')
 
         widgets={'Year_of_birth':forms.TextInput(attrs={'style':'width:22%;color:;borhder:1px solid gray;','value':'e.g 1990','onfocus':"if (this.value=='e.g 1990') this.value='';"}),
                 'Last_name':forms.TextInput(attrs={'style':'width:100%;','value':'','onfocus':"if (this.value=='e.g 1990') this.value='';"}),

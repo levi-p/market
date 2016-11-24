@@ -8,8 +8,11 @@ body > #container { height: auto; min-height: 100%; }
     box-sizing: border-box;
 }
 
+#article_id{width:50%}
+
+.profilePic{display:block;width:100%;height:auto;border:1px solid gray;margin:;border-radius:5px}
 .people{width:40%;min-height:100%;margin:auto}
-.prof{width:50%;height:auto;margin:auto}
+.prof{width:50%;min-height:100%;margin:auto}
 
 .greenButton{width:96px;background-color:green;border:2px solid green;color:white;height:40px;border-radius:5px}
 
@@ -78,7 +81,7 @@ height:auto;}
 
 #dd2{padding:5px;border-radieus:5px;margin-right:10px;border-right:none;2px solid orange;display:block;float:right;border:none;font-weight: bold;}
 
-#dd{gpadding:5px;border-radieus:5px;margin-right:10px;border-righdt:2px solid white;font-weight: bold;}
+#dd{gpadding:5px;border-radieus:5px;margin-right:10px;border-righdt:2px solid white;font-weight: bold;font-size:14px}
 #dd3{padding:5px;border-radieus:5px;margin-right:10px;border-right:2px solid orange;font-weight: bold;display:none}
 #affmg {display:block;width:250%}
 
@@ -123,6 +126,8 @@ height:auto;}
 .productsInc{width:100%;height:auto;margin:auto}
 #dd3{padding:5px;border-radieus:5px;margin-right:10px;border-right:none;font-weight: bold;display:inline}
 .music{width:100%;min-height:100%;margin:auto}
+.profilePic{display:block;width:100%;height:auto;border:1px solid gray;margin:;border-radius:5px}
+#article_id{width:100%}
 
 
 }

@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class='upload mobile' style='background-color:;height:100%'>
-<form enctype="multipart/form-data" method="post" action="{% url 'order:order' pd %}" >
+<form enctype="multipart/form-data" method="post" action="{% url 'order:order' pd.id %}" >
 {% csrf_token %}
 
 
@@ -12,7 +12,7 @@
 {{form.phoneNumber.label_tag}}</br>
 {{form.phoneNumber}}
 
-<input type="submit" style='width:96px;background-color:red;border:2px solid red;color:white;height:40px;border-radius:5px;font-weight:bold' value="order" />
+<input type="submit" style='width:96px;background-color:red;border:2px solid red;color:white;height:40px;border-radius:5px;font-weight:bold' value="order now!" />
 </form>
 </div>
 

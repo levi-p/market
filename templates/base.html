@@ -25,7 +25,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:image" content="{% static 'Affix2.png' %}" />
 
-<link rel="stylesheet"  href="https://cdn.rawgit.com/levi-p/market/5eb5db0/main/static/css/css.css">
+<link rel="stylesheet"  href="https://ctdn.rawgit.com/levi-p/market/n5eb5db0/main/static/css/css.css">
  <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
@@ -165,7 +165,7 @@
 
 
 
-    <a style="color:white" href="{% url "uploadWay" %}">{{request.user|capfirst}} sell a product! |</a>
+    <a style="color:white;font-size:12px" href="{% url "uploadWay" %}">{{request.user|capfirst}} sell a product! |</a>
 
     <span idw="dd" style="font-size:12px;dispelay:inline;flogat:right"><a style='color:white' href="{% url 'main:notify' %}">Notifications<span style='color:yellow;font-weight:bold;background-color:'>({{comment_list|length}})</span></a>
 <a style='color:white' href="{% url 'main:notify' %}">| msg<span style='color:yellow;font-weight:bold;background-color:'>({{message_list|length}})</span></a>
@@ -194,7 +194,9 @@
 {% for i in cat|dictsort:'Name' %}
 <div style='width:100%;height:auto;background-color:#800000;color:orange;border:1px solid black ;margin-right:2px;tefxt-align:center;font-weight:bold;padding:2px;font-size:20px;margin:2px'>
 
-<a style='color:orange;' href="{{i.get_absolute_url}}">{{i}}</a>
+<a style='color:orange;' href="{{i.get_absolute_url}}">{{i}} <span style="color:#800000;fornt-size:50px;float:right;margin-right:50px"> >
+<img src="{% static 'adchoice.png' %}" style=""  alt="gg" />
+ </span></a>
 
 </div>{% endfor %}
 

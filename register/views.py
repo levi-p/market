@@ -115,7 +115,7 @@ def Profile_edit(request,template):
             P_obj.save()
         
     elif template=='Profile_editAll.html' :
-     # if request.method=='POST':
+      if request.method=='POST':
 
         form=Profile_form(request.POST,request.FILES)
         if   form.is_valid():
@@ -123,25 +123,35 @@ def Profile_edit(request,template):
                 Phone_number=form.cleaned_data['Phone_number']
                 year_of_birth = form.cleaned_data['Year_of_birth']
                 last_name = form.cleaned_data['Last_name']
+                pic = form.cleaned_data['profile_pic']
                 try:
                     
                     
 
             
-                    obj=userprofile.objects.filter(user_id=my).update(first_name=request.user,email=request.user.email,location=location,
-                         Phone_number=Phone_number,Year_of_birth=year_of_birth,Last_name=last_name,)
+                    obj=userprofile.objects.filter(user_id=my)
+                    obj.update(first_name=request.user,email=request.user.email,location=location,
+                         Phone_number=Phone_number,Year_of_birth=year_of_birth,Last_name=last_name)
+                    for i in obj:
+                        i.profile_pic=pic
+                        i.save()
+                    
                     return redirect('pref:prefer')    #
                 except Exception,e:
                     error='Please enter a valid phone number'+ str(e)
-        
+                finally:
+                    obj1=userprofile.objects.get(user_id=my)
+                    obj1.save()
+        #return redirect('pref:prefer')
         else: 
-      #return redirect('pref:prefer')  
+            return redirect('pref:prefer')  
         
-    #else: 
+      else: 
             try:
                Instance=userprofile.objects.get(user_id=request.user.id).__dict__ 
                form=Profile_form(initial=Instance)
-            except :pass    
+        
+            except :return redirect('/')#pass    
     return render(request,template,locals())
     
     
