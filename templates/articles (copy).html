@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div clafss="upload mobile" id = "article_id" style="padding:20px;background-color:#dec287;width:50%;height:25%;margin:auto">
+<h1>My blog</h1>
+<div stylde="background-color:white;">
+Author {{artic.A_Name|capfirst}}</br>
+{{artic.time}}</br>
+    </div></br>
+</div>
+
+<div class="upload mobile" id = "article_id" style="padfing:20px;backgfround-color:#e5d7b8;#e7e7e7;bogrder:2px solid red">
+
+
+
+
+
+  <div style="min-height:300px">
+
+    
+
+{% if artic.Pic %}
+<img src="{{artic.Pic.url}}" style="margin:auto;height:auto;width:80%;display:block;border:1px solid gray" alt="image"></img></br>
+{% endif %}
+
+    <div stylfe="background-color:white">
+<h3 style="text-align:center">{{artic.Title|capfirst}}</h3>
+    </div>
+</br>
+    <div style="background-color:white;padding:12px">
+{{artic.Article|linebreaks}}
+    </div>
+
+  </div>
+</div>
+
+
+{% endblock %}

@@ -2,7 +2,18 @@
 
 {% block content %}
 
-<div class="upload mobile" id = "article_id" style="padding:20px;background-color:#e7e7e7;">
+
+<div style="background-color:#e7e7e7;">
+
+<div clafss="upload mobile" id = "article_id" style="padding:20px;background-color:#dec287;wifdth:50%;height:25%;margin:auto">
+<h1>My blog</h1>
+<div stylde="background-color:white;">
+Author {{artic.A_Name|capfirst}}</br>
+{{artic.time}}</br>
+    </div></br>
+</div>
+
+<div class="upload mobile" id = "article_id" styfle="padeing:20px;backround-color:#e5d7b8;#e7e7e7;width:50%;boerder:2px solid red;margin:auto">
 
 
 
@@ -10,25 +21,29 @@
 
   <div style="min-height:300px">
 
-    <div style="background-color:white;">
-Author {{artic.A_Name|capfirst}}</br>
-{{artic.time}}</br>
-    </div></br>
+    
 
-{% if artic.Pic %}
-<img src="{{artic.Pic.url}}" style="margin:auto;height:auto;width:80%;display:block;border:1px solid gray" alt="image"></img></br>
-{% endif %}
 
-    <div style="background-color:white">
-<h3 style="text-align:center">{{artic.Title|capfirst}}</h3>
+
+    <div stylfe="background-color:white">
+
     </div>
 </br>
-    <div style="background-color:white">
-{{artic.Article|linebreaks}}
+    <div style="background-color:white;padding:10px;border-radius:5px;color:#3f3e3d">
+{% if artic.Pic %}
+
+
+<img src="{{artic.Pic.url}}" class="article_img" style="" alt="image"></img></br>
+{% endif %}
+
+<h2 style="text-align:center">{{artic.Title|capfirst}}</h2>
+<p style="text-align:center">{{artic.Article|linebreaks}}</p>
     </div>
 
   </div>
 </div>
-
+</div>
 
 {% endblock %}
+
+

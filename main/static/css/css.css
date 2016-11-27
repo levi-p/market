@@ -10,6 +10,8 @@ body > #container { height: auto; min-height: 100%; }
 
 #article_id{width:50%}
 
+.article_img{margin:auto;height:auto;width:50%;display:block;border:1px solid gray}
+
 .profilePic{display:block;width:100%;height:auto;border:1px solid gray;margin:;border-radius:5px}
 .people{width:40%;min-height:100%;margin:auto}
 .prof{width:50%;min-height:100%;margin:auto}
@@ -128,6 +130,6 @@ height:auto;}
 .music{width:100%;min-height:100%;margin:auto}
 .profilePic{display:block;width:100%;height:auto;border:1px solid gray;margin:;border-radius:5px}
 #article_id{width:100%}
-
+.article_img{margin:auto;height:auto;width:55%;display:block;border:1px solid gray}
 
 }
