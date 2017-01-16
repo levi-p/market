@@ -8,6 +8,7 @@ body > #container { height: auto; min-height: 100%; }
     box-sizing: border-box;
 }
 
+.ofCommonArt{width:100%;height:auto;overflow:hidden;border-bottom:2px solid #191940}
 #article_id{width:50%}
 
 .article_img{margin:auto;height:auto;width:50%;display:block;border:1px solid gray}
@@ -23,7 +24,7 @@ body > #container { height: auto; min-height: 100%; }
 .reg{width:90%;margin:auto;height:auto;color:;bofrder:2px solid red}
 
 
-.test2{width:100%;height:30%;background-color:;border:1px solid ;margin-bottom:2px;clear:both;background-image:url({% static 'bg.jpg' %})}
+.test2{width:100%;height:30%;background-color:;bordher:1px solid ;margin-bottom:2px;clear:both;background-image:url({% static 'bg.jpg' %})}
 
 
 .notify2{background-color:#ececec;width:100%}
@@ -39,7 +40,7 @@ body > #container { height: auto; min-height: 100%; }
 .containbody{width:65%;height:auto;margin:auto;}
 .secondnav{width:100%;height:auto;margin:auto;border-radius:5px;background-color:#191930;#c9c9c9;margin-bottom:10px;color:;padding:px}
 
-.recoproduct{width:30%;height:auto;margin:auto;border-radius:5px;background-color:;margin-bottom:10px;color:white;border:1px solid gray;float:left;margin-left:15px;padding:10px}
+.recoproduct{width:45%;height:auto;margin:auto;border-radius:5px;background-color:;margin-bottom:10px;color:white;border:1px solid gray;float:left;margin-left:27px;padding:10px;overflow:hidden}
 
 .duct{background-color:red;border-radius:3px;float:left;heifght:30px;display:inline}
 
@@ -63,7 +64,7 @@ body > #container { height: auto; min-height: 100%; }
 .allproducts{
 background-cjolor:#eaeaea;width:100%;clear:both;float:none;height:auto;margin:auto;overflow:hidden;margin-bottom:10px;border-radius:5px;color:white;border:1px solid gray;#dedbdb;margin-left:;padding:10px;color:red;text-align:center}
 
-.recoimg{width:100%;border-bottom:2px solid gray;border-radius:5px;}
+.recoimg{width:100%;bofrder-bottom:2px solid gray;border-radius:5px;}
 
 #logo {
 width:20%;
@@ -83,9 +84,9 @@ height:auto;}
 
 #dd2{padding:5px;border-radieus:5px;margin-right:10px;border-right:none;2px solid orange;display:block;float:right;border:none;font-weight: bold;}
 
-#dd{gpadding:5px;border-radieus:5px;margin-right:10px;border-righdt:2px solid white;font-weight: bold;font-size:14px}
+#dd{gpadding:5px;border-radieus:5px;margin-right:10px;border-righdt:2px solid white;font-weight: bold;font-size:14px;display:none;}
 #dd3{padding:5px;border-radieus:5px;margin-right:10px;border-right:2px solid orange;font-weight: bold;display:none}
-#affmg {display:block;width:250%}
+#affmg {display:block;width:100%}
 
 
 /* mobile site */
@@ -93,24 +94,27 @@ height:auto;}
 @media screen and (max-width:725px){
 .secondnav{width:100%;height:auto;margin:auto;border-radius:0px;background-color:#191930;#c9c9c9;margin-bottom:10px;color:;padding:px;ovnerflow:hidden}
 
-.allproducts{width:100%;height:auto;margin:auto;border-radius:5px;background-color:;margin-bottom:30px;color:white;border:1px solid gray;float:left;margin-leeft:10%;padding:10px;color:red;text-align:center}
+.allproducts{width:100%;height:auto;margin:auto;border-radius:5px;background-color:;margin-bottom:30px;color:white;border:1px soliad gray;float:left;margin-leeft:10%;padding:10px;color:red;text-align:center}
 
-.recoproduct{width:100%;height:auto;margin:auto;border-radius:5px;background-color:;margin-bottom:10px;color:white;border:1px solid gray;float:left;margin-lefft:5px;padding:10px;float:left;clear:both;}
+.recoproduct{width:45%;height:200px;margin-left:15px;border-radius:5px;background-color:;margin-bottom:10px;color:white;border:2px solid #d4d4d4;float:left;margin-lefft:5px;padding:10px;float:left;}
 
 #affmg {display:block;width:100%;positsion:relative;tdop:-20px;margifn:auto}
 
 #edd{padding:5px;border-radieus:5px;margin-right:10px;border-right:none;2px solid orange;display:inline;font-weight: bold;}
 #dd2{padding:5px;border-radieus:5px;margin-right:10px;border-right:none;2px solid orange;display:block;float:left;border:none;font-weight: bold;}
 
-#logo {
+#logoold {
 width:60%;
+height:auto;}
+#logo {
+width:11%;
 height:auto;}
 .second2{display:block}
 
 #kk{display:none}
 .containbody{width:100%;height:auto;margin:auto;}
 
-.recoimg{width:100%;border-bottom:2px solid gray;border-radius:5px;}
+.recoimg{width:100%;border-radius:5px;}
 
 .mobile {width:100%;height:auto;}
 

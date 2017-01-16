@@ -11,13 +11,13 @@ please login with an account that has access.</p>
 {% endif %}
 {% endif %}
 
-
-<div class="login mobile" style="">
+<div clarss="login mobile" style="min-height:500px;background-color:#f1f1f1">
+<div class="login mobile" style="background-color:white;">
 <div class="form-plug" style=""><p>login</p></div>
 <form method="post" action=".">
 {% csrf_token %}
 <p>
-<div style="width:55%;margin:auto;height:auto;color:;bodrder:2px solid red">
+<div style="width:100%;margin:auto;height:auto;color:;borrder:2px solid red">
 {{ form.Phone_number.label_tag}}</br>
 {{ form.Phone_number }}</br>
 
@@ -29,6 +29,7 @@ please login with an account that has access.</p>
 </form>
 {# Assumes you setup the password_reset view in your URLconf #}
 <p><a href="{% url 'Sign_up:reset' %}">Lost password?</a></p>
+</div>
 </div>
 </div>
 {% endblock %}

@@ -3,8 +3,8 @@ from .models import Sign_up,userprofile
 #
 
 class loginForm(forms.Form):
-    Phone_number = forms.CharField(required=True)
-    password = forms.CharField(widget=forms.TextInput(attrs={"type":"password"}),required=True)
+    Phone_number = forms.CharField(widget=forms.TextInput(attrs={"style":"width:100%"}),required=True)
+    password = forms.CharField(widget=forms.TextInput(attrs={"type":"password","style":"width:100%"}),required=True)
 
 class Sign_up_form(forms.ModelForm):
     class Meta():

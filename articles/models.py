@@ -28,9 +28,11 @@ class Article_details(models.Model):
     Article = models.TextField(blank=True)
     Pic = models.ImageField(blank=True)
     time=models.DateField(default=now)
-    #Id=models.IntegerField(default=self.id)
+    
     A_Name=models.CharField(max_length=50,blank=True)
     A_pic=models.ImageField(blank=True)
+    choices=[('1','yes'),('2','no')]
+    public = models.CharField(max_length=5,choices = choices,default=1, null=True)
     
 
 
@@ -46,6 +48,21 @@ class Article_details(models.Model):
     
     def get_absolute_url(self):
         return reverse('art:article',kwargs={'article_id':self.id,})
+
+class article_Comment(models.Model):
+    #read=models.TextField(blank=True)
+    article=models.ForeignKey(Article_details)
+    Name=models.CharField(max_length=30,blank=True)
+    comment=models.TextField()
+    time=models.DateField(default=timezone.now,blank=True)
+
+    def __str__(self):
+         return self.Name
+ 
+    def get_absolute_url(self):
+        return reverse('art:article',kwargs={'article_id':self.id,})    
+ #return reverse('main:product_details',kwargs={'Pk':self.products.id,})
+
     
 
 

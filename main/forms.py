@@ -26,3 +26,4 @@ class ProductCommentForm(forms.ModelForm):
     class Meta:
         model=Comment
         exclude=('time','products')
+        widgets={'comment':forms.Textarea(attrs={"style":"width:100%;height:100px"}),}

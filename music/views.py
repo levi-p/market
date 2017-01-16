@@ -3,13 +3,24 @@ from .models import music
 from .forms import musicUploadForm
 from django.http import HttpResponse
 from django.db.models import Q
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 import os
 
 # Create your views here.
 
 def musicView(request):
-    
+    page = request.GET.get('page')
     songList = music.objects.all()
+    paginator = Paginator(songList,10)
+    try:
+        musicList = paginator.page(page)
+    except PageNotAnInteger:
+# If page is not an integer, deliver first page.
+        musicList = paginator.page(1)
+    except EmptyPage:
+# If page is out of range (e.g. 9999), deliver last page of results.
+        musicList = paginator.page(paginator.num_pages)
+    
     return render(request,'music.html',locals())
 
 def songUpload(request):

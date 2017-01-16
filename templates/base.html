@@ -44,7 +44,7 @@
 <script src="{% static "bootstrap/js/bootstrap.min.js" %}"></script>
 
 {% block title %}
-<title>Affixmw</title>
+<title>Affix Malawi</title>
 {% endblock %}
 </head>
 <body>
@@ -58,19 +58,35 @@
 <div class="one" style="width:100%;height:auto;float:left;padding:0px;">-->
 
 
+<!--- affmg causing sign in to brow unproprosionary-->
 
-  
+  <div id="affmg" style="background-color:white;#f4f4f4;position:relative;top:5px;" styyle="position:relative;top:-50px;float:left;height:200;width:70%;margind:5px;background-color:white"><a href="{% url 'home' %}"><img src="{% static 'affixmw2.jpg' %}" style="position:relative;top:8px;width:55px;" id="logo" alt="gg"></a><span style="background-color:#191930;color:orange;position:relative;top:30px;font-weight:bold;display:none">ffix malawi</span>
+<a href="{% url 'home' %}"><img src="{% static 'login2.png' %}" style="width:160px;35%;position:relative;top:-6px;float:right" id="logo" alt="gg"></a>
+<a href="{% url 'home' %}"><span style="float:right;position:relative;top:16px;font-weight:bold">click me to Sell</span></a>
+</div></br>
 
-        <nav class="navbar-inverse" style="background-color: #191930;border-coflor: #080808;margin-bottom:10px" role="navigation">
-       
+        <nav class="navbar-inverse" style="background-color:#191930;border-color: #39436b;margin-bottom:10px;position:relative;top:-10px;" role="navigation">
+      <!-- nav bar is working above class navbar hearder--> 
+
+<div style="float:left;"><span style="color:white;position:relative;top:8px;font-weight:bold;margin-left:5px">Blog</span></div>     
+<div style="float:right;margin-right:19px">
+               
+                <input type="search" value="search..." style="color:grey;width:100px;position:relative;top:5px;border:1px solid white;borrder-radius:50px;background-color:white" />
+                <input type="submit" value="search"  style="position:relative;top:5px;background-color:orange;borrder-radius:50px;border:1px solid orange"/>
+                  </br>
+                   
+                        </div></br></br>
+
+
                   <div class="navbar-header">
 	
       
 
       		
-              <div id="affmg" stsyle="position:relative;top:-50px;float:left;height:200px;width:70%;margind:5px;"><a href="{% url 'home' %}"><img src="{% static 'Affix2.png' %}" style="" id="logo" alt="gg"></a></div>
-                   
-                        </div>
+ 
+                
+
+        
 
                 <div class="collapse navbar-collapse" id="myNavbar">
    
@@ -88,10 +104,10 @@
   
                       </div>
 <div>
-<span id="dd" ><a href="/" style="font-weight:bold;color:white">Home |</a></span>
+<span id="dd" ><a href="/" style="font-weight:bold;color:white">Homhe |</a></span>
 <span id="dd" style=""><a style="color:white" href="{% url 'Sign_up:profile' %} ">Profile|</a></span>
 <span id="dd" ><a href="{% url 'music:music' %}" style="font-weight:bold;color:white">Free music |</a></span>
-<span id="dd" ><a href="{% url 'anthu:allPeople' %}" style="font-weight:bold;color:white">Find People |</a></span>
+<span id="dd" ><a href="{% url 'art:list' %}" style="font-weight:bold;color:white">Blog |</a></span>
 {% if user.is_authenticated %}
 
 
@@ -116,7 +132,7 @@
 
 
 
-<div class='containbody'>
+<div class='containbody' style="background-color:#f4f4f4">
 <div class='secondnav' style="display:none">
 <ul clasds="nav navbar-nav" style="padding-left:0;display:;">
 <span id="ddw" style="font-size:16px"><a href="/"><li>Home |</li></a></span>
@@ -126,7 +142,7 @@
 {% if user.is_authenticated %}
 <span idw="dd" style="font-size:14px;dispelay:inline;flogat:right"><a href="{% url 'main:notify' %}">Notifications<span style='color:red;font-weight:bold;background-color:white'>({{comment_list|length}})</span></a></span>{% endif %}
 </ul>
-
+fdty
 </div>
 
 
@@ -156,12 +172,13 @@
 </style>
 
 
-<div class='test2' style='height:50%;background-image:url({% static 'Online-Store.jpg' %});background-repeat:no-repeat'>
-
- <div  style="width:70%;background-color:#191940;#1E90FF;height:auto;font-weight:bold;padding:5px;margin:auto;position:relative;topds:200px;text-align:center">
+<div class='test2' style='height:20%;backgrougnd-image:url({% static 'lorem.png' %});background-repeat:no-repeat;'>
+<!--<img src="{% static 'ok2.jpg' %}" style="width:90%;margin:auto;display:block;border-radius:5px" idd="logo" alt="gg">-->
+<div style="width:90%;margin:auto;display:block;border-radius:5px"><h3>Find and own whatever,</br> you need!</h3></div>
+{% comment %}
+ <div  style="width:70%;background-color:#ff6000;orange;#191940;#1E90FF;height:auto;font-weight:bold;padding:5px;margin:auto;position:relative;topds:200px;text-align:center">
 
     {% if user.is_authenticated %}
-
 
 
 
@@ -174,13 +191,13 @@
 
 
    {% else %}
-   <span id="dd" style="color:white;border-right:none"><a style="color:white" href="{% url "Sign_up:Sign_up" %}">upload a product</span>
+   <span id="dd" style="color:white;border-right:none"><a style="color:white" href="{% url "Sign_up:Sign_up" %}">Upload a product</span>
    {% endif %}
 
 
 
 </div>
-
+{% endcomment %}
 
 
 
@@ -191,14 +208,6 @@
 </div>
 
 
-{% for i in cat|dictsort:'Name' %}
-<div style='width:100%;height:auto;background-color:#800000;color:orange;border:1px solid black ;margin-right:2px;tefxt-align:center;font-weight:bold;padding:2px;font-size:20px;margin:2px'>
-
-<a style='color:orange;' href="{{i.get_absolute_url}}">{{i}} <span style="color:#800000;fornt-size:50px;float:right;margin-right:50px"> >
-<img src="{% static 'adchoice.png' %}" style=""  alt="gg" />
- </span></a>
-
-</div>{% endfor %}
 
 
 
@@ -220,6 +229,7 @@
 
 
 
+
 {% for i in reco|dictsortreversed:'time' %}
 
 
@@ -227,12 +237,22 @@
 <a href="{{i.get_absolute_url}}">
 
 
-<div class='recoproduct' id='latem' style="margin-top:10px;padding:px"></br><p><span style='font-weight:bold;background-color:#1E90FF;color:white;border-radius:5px;padding:10px;font-size:12px;position:relative;tofp:;margin-top:10px'>new! k{{i.Price}}</span></p>
+<div class='recoproduct' id='latem' style="margin-top:10px;padding:px;height:25%;display:inline;background-color:white"></br>
+<span style='background-color:red;color:white;font-weight:bold;padding:5px'>Cosmetics Sold</span>
 <img class='recoimg' shjhtyle="border:1px solid grey" src="{{i.pic1.url}}" style=""  alt="gg">
 
 </div></a>
 {% endfor %}
+<div style="background-color:blavck;#e8e5e5;text-align:center;font-weight:bold;color:grey;#555555;"><p style="font-size:18px;">Shop by category below</p></div>
+<!--<p style='color:#f4f4f4;'>fdffffffffffd</p>-->
+{% for i in cat|dictsort:'Name' %}
+<div style='width:92%;height:auto;background-color:white;color:grey;border:1px solid #f4f4f4 ;margin-right:2px;tefxt-align:center;font-weight:bold;padding:2px;font-sizfe:20px;margin:auto;clear:both'>
 
+<a style='color:grey;' href="{{i.get_absolute_url}}">{{i}} <span style="color:white;fornt-size:50px;float:right;margin-right:50px"> >
+<img src="{% static 'adchoice.png' %}" style=""  alt="gg" />
+ </span></a>
+
+</div>{% endfor %}
 
 </div>
 

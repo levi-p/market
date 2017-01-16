@@ -22,13 +22,27 @@ Panga upload nyimbo
 <img sourc="{% static 'music.jpg' %}" />
 </div>
 
-{% for i in songList %}
+{% for i in musicList %}
 <div style="width:100%;height:auto;border-bottom:5px solid #e6e6e6;float:left;padding:5px;">
 <a href="{% url 'music:Download' i.id %}" style="font-weight:bold;font-size:20px;color:grey">{{i.Artist|capfirst}}</br>
 <a href="{% url 'music:Download' i.id %}" style="font-weight:bold;font-size:16px">{{i.Title}}.mp3
 <span style='float:right;'>Download</span></a>
 </div>
 {% endfor %}
+
+<div class="upload mobile" style="text-align:left;>
+<span class="step-links">
+{% if musicList.has_previous %}
+<a href="?page={{ musicList.previous_page_number }}">previous</a>
+{% endif %}
+<span class="current">
+Page {{ musicList.number }} of {{ musicList.paginator.num_pages }}.
+</span>
+{% if contacts.has_next %}
+<a href="?page={{ musicList.next_page_number }}">next</a>
+{% endif %}
+</span>
+</div>
 
 </div>
 {% endblock %}

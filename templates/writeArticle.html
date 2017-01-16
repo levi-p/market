@@ -4,13 +4,23 @@
 {% block content %}
 <html>
 <body>
-<div class="upload mobile" id="article_id" style="min-height:300px">
+<div style="background-color:#e7e7e7;">
+
+<div class="upload mobile" id="article_id" style="min-height:500px;bfackground-color:white">
 <form method="post" action=".">
   {% csrf_token %}
-  {{form}}
-  <input type = "submit" value='write' />
+  {{form.Title.label_tag}}</br>
+  {{form.Title}}</br>
+
+  {{form.Article.label_tag}}</br>
+  {{form.Article}}</br>
+
+  {{form.public.label_tag}} </br>
+  {{form.public}}
+  <input type = "submit" value='write!' style='width:100%;background-color:green;border:2px solid green;color:white;height:40px;border-radius:5px;font-weight:bold' />
 
 </form>
+</div>
 </div>
 
 </body>
