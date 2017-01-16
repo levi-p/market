@@ -1,0 +1,259 @@
+<!Doctypt html>
+<html>
+<head>
+{% load static %}
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-80328072-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:image" content="{% static 'Affix2.png' %}" />
+
+<link rel="stylesheet"  href="https://ctdn.rawgit.com/levi-p/market/n5eb5db0/main/static/css/css.css">
+ <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
+
+<link href="{% static 'css/css.css' %}" type="text/css" rel="stylesheet">
+ <link rel="stylesheet" type="text/css" href="{% static "bootstrap/css/bootstrap.css" %}">
+<script src="{% static "bootstrap/js/jquery.min.js" %}"></script>
+<script src="{% static "bootstrap/js/bootstrap.min.js" %}"></script>
+
+{% block title %}
+<title>Affixmw</title>
+{% endblock %}
+</head>
+<body>
+
+
+<div id="container" stylee="border: ;background-color;red">
+    
+
+
+       <!--<div id="content" style="background-color:red;">
+<div class="one" style="width:100%;height:auto;float:left;padding:0px;">-->
+
+
+
+  
+
+        <nav class="navbar-inverse" style="background-color: #191930;border-coflor: #080808;margin-bottom:10px" role="navigation">
+       
+                  <div class="navbar-header">
+	
+      
+
+      		
+              <div id="affmg" stsyle="position:relative;top:-50px;float:left;height:200px;width:70%;margind:5px;"><a href="{% url 'home' %}"><img src="{% static 'Affix2.png' %}" style="" id="logo" alt="gg"></a></div>
+                   
+                        </div>
+
+                <div class="collapse navbar-collapse" id="myNavbar">
+   
+
+    
+    
+   <!--{% if user.is_authenticated %}
+    
+   {% else %}
+   <span id="dd2" style="color:white"><li style="color:white"><a class='ll' style="color:white" href="{% url "login" %}">login</a>/<a  href="{% url "Sign_up:Sign_up" %}">sign up</a></li></span>
+   {% endif %}-->
+
+
+   </ul>
+  
+                      </div>
+<div>
+<span id="dd" ><a href="/" style="font-weight:bold;color:white">Homhe |</a></span>
+<span id="dd" style=""><a style="color:white" href="{% url 'Sign_up:profile' %} ">Profile|</a></span>
+<span id="dd" ><a href="{% url 'music:music' %}" style="font-weight:bold;color:white">Free music |</a></span>
+<span id="dd" ><a href="{% url 'art:list' %}" style="font-weight:bold;color:white">Blog |</a></span>
+{% if user.is_authenticated %}
+
+
+
+
+    <span id="dd" style="float:right"><a href="{% url "logout" %}?next=/"><li class='ll' style="color:white">logout </li></a></span>
+
+   {% else %}
+   <span id="dd"  style="float:right;color:white;border-right:none"><a style="color:white" href="{% url "Sign_up:log" %}">login /</a><a style="color:white" href="{% url "Sign_up:Sign_up" %}"> sign up</a></span>
+   {% endif %}
+</div>
+
+                 
+
+
+
+</nav>
+<div style="width:100%;float:left;text-align:right"></br></div>
+
+{% block content %}
+
+
+
+
+<div class='containbody'>
+<div class='secondnav' style="display:none">
+<ul clasds="nav navbar-nav" style="padding-left:0;display:;">
+<span id="ddw" style="font-size:16px"><a href="/"><li>Home |</li></a></span>
+    {% for i in cat %}
+    <span idw="dd" style="font-size:14px;dispelay:inline;"><a href="{{i.get_absolute_url}}"><li style='colfor:black;#1E90FF;font-weight:none'>{{i}} |</li></a></span>
+    {% endfor %}
+{% if user.is_authenticated %}
+<span idw="dd" style="font-size:14px;dispelay:inline;flogat:right"><a href="{% url 'main:notify' %}">Notifications<span style='color:red;font-weight:bold;background-color:white'>({{comment_list|length}})</span></a></span>{% endif %}
+</ul>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- this is for mobile navigation  <img src="{% static 'Online-Store.jpg' %}" stylhe="" idd="logo" alt="gg">   -->
+
+
+<style>
+
+</style>
+
+
+<div class='test2' style='height:50%;backgrougnd-image:url({% static 'lorem.png' %});background-repeat:no-repeat'>
+{% comment %}
+ <div  style="width:70%;background-color:#ff6000;orange;#191940;#1E90FF;height:auto;font-weight:bold;padding:5px;margin:auto;position:relative;topds:200px;text-align:center">
+
+    {% if user.is_authenticated %}
+
+
+
+
+    <a style="color:white;font-size:12px" href="{% url "uploadWay" %}">{{request.user|capfirst}} sell a product! |</a>
+
+    <span idw="dd" style="font-size:12px;dispelay:inline;flogat:right"><a style='color:white' href="{% url 'main:notify' %}">Notifications<span style='color:yellow;font-weight:bold;background-color:'>({{comment_list|length}})</span></a>
+<a style='color:white' href="{% url 'main:notify' %}">| msg<span style='color:yellow;font-weight:bold;background-color:'>({{message_list|length}})</span></a>
+
+</span>
+
+
+   {% else %}
+   <span id="dd" style="color:white;border-right:none"><a style="color:white" href="{% url "Sign_up:Sign_up" %}">Upload a product</span>
+   {% endif %}
+
+
+
+</div>
+{% endcomment %}
+
+
+
+
+
+
+
+</div>
+
+
+{% for i in cat|dictsort:'Name' %}
+<div style='width:100%;height:auto;background-color:#800000;color:orange;border:1px solid black ;margin-right:2px;tefxt-align:center;font-weight:bold;padding:2px;font-size:20px;margin:2px'>
+
+<a style='color:orange;' href="{{i.get_absolute_url}}">{{i}} <span style="color:#800000;fornt-size:50px;float:right;margin-right:50px"> >
+<img src="{% static 'adchoice.png' %}" style=""  alt="gg" />
+ </span></a>
+
+</div>{% endfor %}
+
+
+
+<!-- it ends here -->
+
+
+
+
+
+
+
+
+
+<style>
+
+</style>
+
+
+
+
+
+{% for i in reco|dictsortreversed:'time' %}
+
+
+
+<a href="{{i.get_absolute_url}}">
+
+
+<div class='recoproduct' id='latem' style="margin-top:10px;padding:px"></br><p><span style='font-weight:bold;background-color:#1E90FF;color:white;border-radius:5px;padding:10px;font-size:12px;position:relative;tofp:;margin-top:10px'>new! k{{i.Price}}</span>
+<span style='font-weight:bold;background-color:red;color:white;border-radius:5px;padding:10px;font-size:12px;position:relative;tofp:;margin-top:10px'>new! k{{i.Price}}</span></p>
+<img class='recoimg' shjhtyle="border:1px solid grey" src="{{i.pic1.url}}" style=""  alt="gg">
+
+</div></a>
+{% endfor %}
+
+
+</div>
+
+
+
+
+{% endblock%}
+
+
+
+
+
+
+{% block footer %}
+<footer style='background-color:#191940;clear:both;border-radius:;color:white;text-align:center;'>
+                <div class="container">
+                    <p cladss="pull-right">
+                    Contact:    affixmw@gmail.com</br></p>
+                    <p>    &copy; A Levi Mwase 2016 production 
+                    </p>
+                </div>
+            </footer>
+{% endblock%}

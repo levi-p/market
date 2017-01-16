@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!--<div style="background-color:6d3e00;height:100px"></div>-->
+
+
+<div style="background-color:#e7e7e7;">
+
+<div clafss="upload mobile" id = "article_id" style="padding:20px;background-color:#dec287;wifdth:50%;height:25%;margin:auto">
+<h1>My blog</h1>
+<div stylde="background-color:white;">
+Author {{artic.A_Name|capfirst}}</br>
+{{artic.time}}</br>
+    </div></br>
+</div>
+
+<div class="upload mobile" id = "article_id" styfle="padeing:20px;backround-color:#e5d7b8;#e7e7e7;width:50%;boerder:2px solid red;margin:auto">
+
+
+
+
+
+  <div style="min-height:300px">
+
+    
+
+
+
+    <div stylfe="background-color:white">
+
+    </div>
+</br>
+    <div style="background-color:white;padding:10px;border-radius:5px;color:#3f3e3d;borrder:2px solid red">
+{% if artic.Pic %}
+
+
+<img src="{{artic.Pic.url}}" class="article_img" style="" alt="image"></img></br>
+{% else %}
+<img src="{% static 'drops.jpg' %}" class="article_img" alt="image"  />
+
+{% endif %}
+
+<h2 style="text-align:center">{{artic.Title|capfirst}}</h2>
+<p style="text-align:center">{{artic.Article|linebreaks}}</p>
+
+<h3>Comments</h3>
+ {% for i in h %}
+      <span style="color:#1E90FF"> {{i|capfirst}}</span></br>
+      <span styeele="background-color:gray;width:100%"> {{i.comment}}</span></br></br>
+   {% endfor %}
+
+
+   
+
+   <!--<div class='upload mobile' style='margin:1px;float:left'>-->
+       <form enctype="multipart/form-data" method="post" action="{% url 'art:article' artic.id %}" >
+          {% if user.is_authenticated %}
+            {% csrf_token %}
+              Write your comment</br>
+            {{form.comment}}</br>
+          {% else %}
+            {{form.Name.label_tag}}</br>
+            {{form.Name}}</br>
+            
+             Write your comment</br>
+            {{form.comment}}</br>
+          {% endif %}
+           
+       <input type="submit" style='font-weight:bold;width:100%;background-color:green;border:2px solid green;color:white;height:40px;border-radius:5px' value="post" />
+       </form>
+   <!--</div>-->
+
+
+
+
+
+
+    </div>
+
+  </div>
+</div>
+</div>
+
+
+
+{% endblock %}
+
+

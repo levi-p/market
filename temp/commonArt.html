@@ -1,0 +1,32 @@
+{% load static %}
+
+<div style="width:100%;height:auto;overflow:hidden;border-bottom:2px solid #191940">
+
+
+    <div class="post_img1" style="overflow:hidden;height:auto">
+    
+{% if x.Pic %}
+<img src="{{x.Pic.url}}" alt="image" style="width:20%" id="room-d-img" /></div>
+
+{% else %}
+<img src="{% static 'drops.jpg' %}" alt="image" style="width:20%" id="room-d-img" />
+{% endif %}
+
+
+<div class="post_inside" style="">
+
+ <h3>  <a href="{{ x.get_absolute_url }}" style="color:black">{{x}}</a></h3>
+<p class="Article_text">{{x.Article|truncatechars:200}} <a href="{{ x.get_absolute_url }}" style="color:#1E90FF">Read more</a></p>
+        </div></br>
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>

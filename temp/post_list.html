@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+<title>Articles</title>
+
+{% endblock %}
+
+
+
+{% block content %}
+<div class="upload mobile" id = "article_id" style="min-height:500px">
+
+
+<h2 style="text-align:center;font-weght:bold">All Articles</h2>
+
+
+
+
+
+<div class="post_list" style="">
+
+{% for x in P_list|dictsortreversed:'time' %}
+{% include "commonArt.html" %}
+{% endfor %}
+
+
+</div>
+
+
+
+
+
+
+
+
+
+</div>
+
+
+{% endblock %}
+
+

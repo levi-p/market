@@ -1,0 +1,6 @@
+connect buyers
+connect sellers
+
+models buyer 
+
+
