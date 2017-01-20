@@ -64,7 +64,7 @@ body > #container { height: auto; min-height: 100%; }
 .allproducts{
 background-cjolor:#eaeaea;width:100%;clear:both;float:none;height:auto;margin:auto;overflow:hidden;margin-bottom:10px;border-radius:5px;color:white;border:1px solid gray;#dedbdb;margin-left:;padding:10px;color:red;text-align:center}
 
-.recoimg{width:100%;bofrder-bottom:2px solid gray;border-radius:5px;}
+.recoimg{width:68%;bofrder-bottom:2px solid gray;border-radius:5px;}
 
 #logo {
 width:20%;

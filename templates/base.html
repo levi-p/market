@@ -230,19 +230,29 @@ fdty
 
 
 
-{% for i in reco|dictsortreversed:'time' %}
 
 
+
+<!-- to do with recommended categories -->
+<a href="{{i.get_absolute_url}}">
+
+
+<div class='recoproduct' id='latem' style="margin-top:10px;padding:px;height:25%;display:inline;background-color:white"></br>
+<span style='background-color:red;color:white;font-weight:bold;padding:5px'>Clothing Sold</span></br>
+<img class='recoimg' shjhtyle="border:1px solid grey" src="{% static 'clothing.jpg' %}" style=""  alt="gg">
+
+</div></a>
 
 <a href="{{i.get_absolute_url}}">
 
 
 <div class='recoproduct' id='latem' style="margin-top:10px;padding:px;height:25%;display:inline;background-color:white"></br>
-<span style='background-color:red;color:white;font-weight:bold;padding:5px'>Cosmetics Sold</span>
-<img class='recoimg' shjhtyle="border:1px solid grey" src="{{i.pic1.url}}" style=""  alt="gg">
+<span style='background-color:red;color:white;font-weight:bold;padding:5px'>Cosmetics available!</span>
+<img class='recoimg' shjhtyle="border:1px solid grey" src="{% static 'cosmetics.jpg' %}" style=""  alt="gg">
 
 </div></a>
-{% endfor %}
+<!-- recomended categories ends here -->
+{% comment %}{% endfor %}{% for i in reco|dictsortreversed:'time' %}{% endcomment %}
 <div style="background-color:blavck;#e8e5e5;text-align:center;font-weight:bold;color:grey;#555555;"><p style="font-size:18px;">Shop by category below</p></div>
 <!--<p style='color:#f4f4f4;'>fdffffffffffd</p>-->
 {% for i in cat|dictsort:'Name' %}
